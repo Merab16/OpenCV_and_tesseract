@@ -1,0 +1,1021 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/C++/Albion_openCV/Albion/Albion/DataBase.cpp"
+                },
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 10,
+                  "endLine": 175,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CalcProfit",
+                  "decoratedName": "?CalcProfit@@YANHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.31.31107.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00007FF785A89CC0 -il C:\\Users\\merab\\AppData\\Local\\Temp\\_CL_ce58d653ast -typedil -f DataBase.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1931 -D_MSC_FULL_VER=193131107 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -I D:\\OpenCV\\opencv\\build\\include -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -GF -Og -Ot -Oy -Oi -ltcg -DCODE_ANALYSIS -DNDEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -MD -D_MT -D_DLL -GS -D_M_FP_PRECISE -Zc:wchar_t -Zc:forScope -permissive- -Fox64\\Release\\DataBase.obj -Fdx64\\Release\\vc143.pdb -external:W 3 -Gd -analyze:projectdirectory D:\\C++\\Albion_openCV\\Albion\\Albion -analyze:rulesetdirectory ;C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\atlmfc\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\atlmfc\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\atlmfc\\include -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/base.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "5a3c5081f4f83132da06064fea5d81e648d0b251eafc2d4016c83f7f59559867"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/mat.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "e1e01cdab8799be9d0548b69e6d621ff91b828929092e2751c5d092b00457510"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/mat.inl.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "68f9f3826e1997604597f7c1014225842673281a3eb54ae3b5bc5c1e66fe3cd1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/operations.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "a454b020aac66461ed9382ff535f84738dd2a72c78e926859d31a205280f3672"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/utility.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "a981134ae9e81123a00bccd54ed2d5017c9691430be71a736e29214c3e2ea2eb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/async.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "1cc836ba21eb6aa78cdca7e72a10d2e572988685cc3931a9a84b5011538bcdc3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/matrix.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c5eb80ed32c9c6a71857f3117d8c77cafe72e65f9fb7abfd87ff440218dca1b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/saving.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "9fb1b9228363fb623ba0e232569718aa1939505fd2a17d7f12d9ec027b7ce86e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/dist.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "53cbff727068232cd24423da4e7c108eaddeac1b4395427bfb5460c9376ee6f9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/kdtree_index.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "4c7e29d73029c1a57399578634b18f82fe259e5204e35b13e9a7eec6abb6e5b6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/kmeans_index.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "091564dd125c3ecec2021873cc1c59f46f917d9118ce0a07c38949d88ca64769"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/lsh_table.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "29a044fd37935fb4b0bdd126c77d2aae2140f2bd06fd6673ec39047081caa293"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/imgproc.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "6f45930781e1cde7df67b466a9e922c0e3adaca31e2df19fad75cf43ffe5cc81"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/objdetect.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c00184819b5e9c5ce0ea774c3969b04b73be7e6eec3dff1bc4ffed560c3d14c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/objdetect/detection_based_tracker.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "54385f6d1fd1b59798163fa3d95ad81bbec33fa626c7569d82e7e7deb520de09"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/cuda.inl.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "03cd6f4942cd974d5c4e2da38a87463958cf5de24e9c0c8b0c886a27441bc3de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/stitching/detail/warpers.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "0dad26a39904792e21c1bb5a4fc8d3f2755ed78aa422f7065a665ae607f74f29"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/stitching/detail/seam_finders.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "d6162e5cd2c86a8e8a7c62ccfceef8db6f9fb91fdeae71e3eb9e9aca301cbc71"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/stitching.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "52fc63f2143bc37b09565e1325700b3930385d8c7575f5e1196da98f4e778736"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/flann/any.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "28a7aa9a1f2524ffa91102c308b33550328406c97321959c2010e216a7f719a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/OpenCV/opencv/build/include/opencv2/core/matx.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "3dc72fbb351753af5f74077ced89b2a6ee1c8bc72d17d127933aae7eb96f82dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/source.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "e336dfa051892b0e7a4392108fbd67ca66838ded2f592f2706c69549a77dec04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/opencv.hpp"
+          },
+          "hashes": {
+            "sha-256": "adc3825effefc6608c821165a461fa951df92a9926b53d7f230b23c634a52772"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/opencv_modules.hpp"
+          },
+          "hashes": {
+            "sha-256": "f3a63585c90a75bd166460e03ff28ccff73f38a52b04eb8a6f72d02d3b971aa5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core.hpp"
+          },
+          "hashes": {
+            "sha-256": "0a63854dade875b79b116fc3091d31a8cf3732266d1580ef1d0c34bddc08fa8b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cvdef.h"
+          },
+          "hashes": {
+            "sha-256": "aff2fa3f320d8994431841c69dfb0e3b9cbf29a680395870b96dbf6d813ce69b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/version.hpp"
+          },
+          "hashes": {
+            "sha-256": "d5f0dc597c8e4404dbd286f1c1bd81b2cc03add797aea340d62cc699c40c5216"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/hal/interface.h"
+          },
+          "hashes": {
+            "sha-256": "d0d876a5d4c3082ad71541aa6b366ef4dd5efe2d7b9d109d517d6928e181b83e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cv_cpu_dispatch.h"
+          },
+          "hashes": {
+            "sha-256": "7a17f35bba600a40a6d0fe6cc756f087462479332d47f0a736a785cb81c74e47"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cvstd.hpp"
+          },
+          "hashes": {
+            "sha-256": "9ba9df62de1fb7719cb81291dbd8448efa8c7d92a75b0c4873af5268beb64b1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cvstd_wrapper.hpp"
+          },
+          "hashes": {
+            "sha-256": "109f1e19060f7ec1e573953aa40f2592cfd00b6b96f7816cbb2f9b08d0b2c0ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/neon_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "ce0436e0cc3e236e317b03a9859ed31f10d56979391252c754f75dfbeaa4ebd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/vsx_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "25f9454ed358cbaac0e8233e8db57f5c4d485f7ef2915352a187d95033183d0f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/check.hpp"
+          },
+          "hashes": {
+            "sha-256": "5cac11b76348457e5bf22e842b919b44a78da1d88ea57a8c0214ac5f3dce23ce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "2ee21d68861633bfa835d21e40bc381f63f3e05f3467bff8f4be2931436746ed"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/saturate.hpp"
+          },
+          "hashes": {
+            "sha-256": "7ae18d9a6be2a51d11349323888c4c81fc9c864da5399bdc17f32ae896db6a60"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/fast_math.hpp"
+          },
+          "hashes": {
+            "sha-256": "08f29ecef354b534dd85c33264e51718a1cad235dab457ed8fdb65926007fdda"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/types.hpp"
+          },
+          "hashes": {
+            "sha-256": "b8535816ad42a12433775baa442c6572a6bfd509ffc6af636807546bcc44918c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/bufferpool.hpp"
+          },
+          "hashes": {
+            "sha-256": "7b81257f13fcc5011f489b6cab29f0a8b4496ab6158b8cf5c254bbc5ea55ce7a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/persistence.hpp"
+          },
+          "hashes": {
+            "sha-256": "7ba692e413f485abe600ec16224b0e7de2d451a23eb3dcb7e2e01fa65019d51d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cvstd.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "340a651e83315e23a5af89caf95affae0b5cf19691a25eef3cbb43e9d01a9753"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/optim.hpp"
+          },
+          "hashes": {
+            "sha-256": "8c5b36faf0b05d1371b426ae075bcd4ae42e65a2c401aa4924fa442a77b525d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/ovx.hpp"
+          },
+          "hashes": {
+            "sha-256": "21a2d7b931f406636958ec299cdd076110e0bf51c5a09004bd2ccd84e9993e3a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/calib3d.hpp"
+          },
+          "hashes": {
+            "sha-256": "b3866841a7146e143bfd028594b8feb444251db58c4585211ca1579494f408f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/features2d.hpp"
+          },
+          "hashes": {
+            "sha-256": "b1008bd2f6954c6e6c8d076c39bb3c827f0db9f1ccba2f35f2c7e695198d60fd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/miniflann.hpp"
+          },
+          "hashes": {
+            "sha-256": "0ff35124a033e0b7eed3ecfd6da5c5bd4c80763005cebcee3ec362e3df6bb99f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/defines.h"
+          },
+          "hashes": {
+            "sha-256": "a4daedcace54e27be42873615744fd31cf3370226ead0551a3392865a07c5bfd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/config.h"
+          },
+          "hashes": {
+            "sha-256": "52af9f6013bcaea20aee701403f92c3ea110fe367689aae040a592e4b036239f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/affine.hpp"
+          },
+          "hashes": {
+            "sha-256": "e6fe5fda34a167a626d7bd3467d7776f1ea2c6dca38d7a1813b5259a9eb2ac04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn.hpp"
+          },
+          "hashes": {
+            "sha-256": "ad4405715b166097a3cc1f7e02f01385122667f8b99535d058d6e2d496e5b811"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn/dnn.hpp"
+          },
+          "hashes": {
+            "sha-256": "fa4d8aafbaf1e7aa68248d6b37c08bcf9ff214e3f53ef3e02b187cae5e31ec59"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn/version.hpp"
+          },
+          "hashes": {
+            "sha-256": "66414ebe352b2bb759f0dc74337bc709ecd6ebf426d4ae72dfee64b46bd6df92"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn/dict.hpp"
+          },
+          "hashes": {
+            "sha-256": "d54449602465d00a27ba8977a9d3154d87639312ef56ae458d0821c0cc590c76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn/layer.hpp"
+          },
+          "hashes": {
+            "sha-256": "0c651780517caa2a64772fed1194707460da95a3310a6ffef465340747d3e106"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn/dnn.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "3f79e598c9b9232e239a431b8314b5694a30194ce0a586f1267edfc4fbfdb4cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/dnn/utils/inference_engine.hpp"
+          },
+          "hashes": {
+            "sha-256": "713462837e46b35fced8476c116e1a3cb9141b45c83d57a054a8022176dcf26a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann.hpp"
+          },
+          "hashes": {
+            "sha-256": "3fe718f179b5976aeb423718034c37f9731929b136ded2e95ae380f797abaf07"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/flann_base.hpp"
+          },
+          "hashes": {
+            "sha-256": "b29057ad4b24a52e1248780efb3484d281ffd96089c2ba301920cae18f268310"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/general.h"
+          },
+          "hashes": {
+            "sha-256": "00fc370a0f630407c2b9c1b07580fefb74ebae969c444c45a861b8ed679b6fec"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/params.h"
+          },
+          "hashes": {
+            "sha-256": "0c340401e892070117cd9f3cade6fbad3ecaae4d65ddd648f80ef74675095f17"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/nn_index.h"
+          },
+          "hashes": {
+            "sha-256": "193ef9071c833c8d5730b876b81303d33d8edc82cacfca9bdfcc62afa58226ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/result_set.h"
+          },
+          "hashes": {
+            "sha-256": "3e0a57964d887aca8f8fee4800f06ffb8bb489a020addeabbb93c9e31817fa78"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/all_indices.h"
+          },
+          "hashes": {
+            "sha-256": "e7a947e4486bf58aa6f49892e195138de012f6085067ae36b774513eb378678b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/dynamic_bitset.h"
+          },
+          "hashes": {
+            "sha-256": "350981a536e64459fc3c326379aa471c094f85cdeee1bd0086f23a8a4964efe4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/heap.h"
+          },
+          "hashes": {
+            "sha-256": "c8bb22862f0305623fa2f32be07f245c2ff474ae0f99884f59c4dd7413283801"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/allocator.h"
+          },
+          "hashes": {
+            "sha-256": "ef8b70d22ee5013c06ddf3dfd1865a45f6e92ab9abe5e3b54b9341bcac5a3490"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/random.h"
+          },
+          "hashes": {
+            "sha-256": "ccaeac3d38e17b89628772040cc975671c407d4fec596269f326fbc20251e472"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/kdtree_single_index.h"
+          },
+          "hashes": {
+            "sha-256": "ec3c1d981fbd104c0c8cf1dee7651fe3c6ae77e994dbb555af1aeaabc8f7382b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/logger.h"
+          },
+          "hashes": {
+            "sha-256": "02c70959eb29c7bb2ce549d237bda7f28c7f1422c828047e8725758becbb9ba5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/composite_index.h"
+          },
+          "hashes": {
+            "sha-256": "b37e735348552c91560eeaedf2c80830aef3e6019a95da3b310f9b1a91cc63e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/linear_index.h"
+          },
+          "hashes": {
+            "sha-256": "967c6d5e598a01cd8755204308f69bf99e1538bcaa69926c40541fd183743385"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/hierarchical_clustering_index.h"
+          },
+          "hashes": {
+            "sha-256": "6361f994904ba7bcabd0e5fdca7aafb9aa17b0fe4734b35873a3453cd5cb3fae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/lsh_index.h"
+          },
+          "hashes": {
+            "sha-256": "b38aecdf2fa9f02447e5f539e8a0144e243acf813e22194a2f3cfd6ab19176e8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/autotuned_index.h"
+          },
+          "hashes": {
+            "sha-256": "26ddef777d584e2ad44feaba1c976687bba1a6bf38f2ba97c07773cf795112bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/ground_truth.h"
+          },
+          "hashes": {
+            "sha-256": "6ff4c48ce1a8e03abe873b137f40fff3460efd11cbdf6d030258bfa199fea38a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/index_testing.h"
+          },
+          "hashes": {
+            "sha-256": "571beb2201ddb9d1709460711479feabb6aafc1954d86663e2466db5bcac38af"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/timer.h"
+          },
+          "hashes": {
+            "sha-256": "cdbf403037e062472679d29ac43a036190c89b633bb37e1086275b5db0378b55"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/flann/sampling.h"
+          },
+          "hashes": {
+            "sha-256": "8ad64010c5102963d34b60407f92b32b52869c6a73419eceed9d31454e30813c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/highgui.hpp"
+          },
+          "hashes": {
+            "sha-256": "d5132c66ba0259026166fbe90b4e7c76f14dad5f450c51d7c8597802e71a75c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/imgcodecs.hpp"
+          },
+          "hashes": {
+            "sha-256": "78719f814cb9f01ad67819571c8a010843421e7e68333cc1afd0be9b42587c73"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/videoio.hpp"
+          },
+          "hashes": {
+            "sha-256": "05a79ab0a9474f09ce7e55911c81f2041886989ed8eb8beea9d1289a740215f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/imgproc/segmentation.hpp"
+          },
+          "hashes": {
+            "sha-256": "30965b9a0dba7f0e77a6db966f06029d5af439f86ac77a2b8b28c34d4973830e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/ml.hpp"
+          },
+          "hashes": {
+            "sha-256": "bf5db9b06c96a734b6f32eff8084cfa8c514c25eab9f62f064401c8f421284b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/ml/ml.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "ea7d089ae2aabda2a1f4b496af1b6582fab64951caeb574941c56cb58ddd3045"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/objdetect/face.hpp"
+          },
+          "hashes": {
+            "sha-256": "1ab9cd863ccf8d213f788f573636c808e64b34278f2e0df7fabcc04bdc3196fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/photo.hpp"
+          },
+          "hashes": {
+            "sha-256": "808edc6aa281c0c67848de731850a76363fb9a66c71c17674f71f236534f96ab"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/warpers.hpp"
+          },
+          "hashes": {
+            "sha-256": "8862f244a5fbd9eff01289596a5f50fed568f1a9866de8218f105feafa46c325"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cuda.hpp"
+          },
+          "hashes": {
+            "sha-256": "95fbeb4253583786d363e097d608118fa6f3bfc7c8f6017ef201a843ac9fcb26"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/core/cuda_types.hpp"
+          },
+          "hashes": {
+            "sha-256": "623ac1f5dd2d05d9ed871a8f4ab991aaf0fed660caee1ca240a1de952a316b21"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/warpers_inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "f2de72510a47d108e73ed48a98895e479fd5f5d0eeaabf79be12243c83c4eecc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/matchers.hpp"
+          },
+          "hashes": {
+            "sha-256": "14cf31d1fa0db8478d9ca08bd23709095a1af6ecd553be422ab0a155e3bd4dc9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/motion_estimators.hpp"
+          },
+          "hashes": {
+            "sha-256": "80014397695d8935450c7c0ef678016161e2b19c24ae368f209b80e8542e04ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/util.hpp"
+          },
+          "hashes": {
+            "sha-256": "15f9f633e75ce11313cc093ac8bb6a54a8947ab97a583ec30a15cec2cf1ec92f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/util_inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "21cf60af2d2f82a19c11500091c4ae687826cf067b3ff9ead55d52a473e91e0c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/camera.hpp"
+          },
+          "hashes": {
+            "sha-256": "1d9b1194b3b220d44350c586ecfa729263dcfba39488cb66feacfcd9930c28c1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/exposure_compensate.hpp"
+          },
+          "hashes": {
+            "sha-256": "92474066f75f3ded0b3b66278b957bbc8b51b867dfff48a8dc87e0d8aadc7d44"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/stitching/detail/blenders.hpp"
+          },
+          "hashes": {
+            "sha-256": "1dfe06d9bd062cdc201bf093529646c601fb4a06a4bd8f2c9baa2c0452f61ae6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/video.hpp"
+          },
+          "hashes": {
+            "sha-256": "ce06cfd143c5bba6bb726fcf66fe7e84b9f346969672591931e339eeb6abf3b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/video/tracking.hpp"
+          },
+          "hashes": {
+            "sha-256": "b25e5e27dd9c02ea8d5dd28bc9f0dcaf3ace8366d490fb715db360db9631c4e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/opencv/opencv/build/include/opencv2/video/background_segm.hpp"
+          },
+          "hashes": {
+            "sha-256": "4af475628220405a71b408044eae248eee64ef13422fcb48e4e5e9713237ada5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/screencapture.h"
+          },
+          "hashes": {
+            "sha-256": "7d6612217029c62ea46d07a532b693e62ac3089fc3a64453c3e227fecf20066b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/screeninfo.h"
+          },
+          "hashes": {
+            "sha-256": "b98f2722f993fc262770be0baed8632d61be98bb9c5fe9792aeb3cf7959dc61b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/movetoposition.h"
+          },
+          "hashes": {
+            "sha-256": "915c06b89c9fba7c9143df89d2651d4843378738d13a0885082e2c4a25302731"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/items.h"
+          },
+          "hashes": {
+            "sha-256": "9849bd59f0bfd846e8d35bc92811ad822c7bd3d0311fd767994a554bc5dd5088"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/item.h"
+          },
+          "hashes": {
+            "sha-256": "1533abfc82a2edfcb9f210b0e0be29bc231434ced4ae1df6ffd76926e2c8bdb7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/database.h"
+          },
+          "hashes": {
+            "sha-256": "6ebc968b6db55cacfb29a958d7d140feb015bb6ae11de91795cda888a680e275"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/profile.h"
+          },
+          "hashes": {
+            "sha-256": "33f8703373806cd524f8d912aec508f2b0c6a92893d16f3fd5955215ef584240"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/movetoposition.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "12ddd68d9fa6fba04ca0801e4c111af9157496dd0630e9e02ac761385b7157cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/items.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "84c56cd35e3a52c029a6056bea70025c611bbb23c18e023fdb49632ac3e493ce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/c++/albion_opencv/albion/albion/item.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "b03f9771b7ba591d00361c91bcee5200e2996f9505791db4d60d5493572573d7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/C++/Albion_openCV/Albion/Albion/DataBase.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "d24d042b924f6ef7d638d60bb321516e02c71ec43e83d555c8df0cca403aecbc"
+          }
+        }
+      ]
+    }
+  ]
+}
