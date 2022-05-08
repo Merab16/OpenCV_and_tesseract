@@ -11,5 +11,7 @@ Bot for Albion Online market
 
 
 Для полноценной работы, необходимо установить OpenCV и tesseract:
+
 tesseract - https://www.youtube.com/watch?v=2kWvk4C1pMo&list=LL&index=5
+
 OpenCV - https://www.youtube.com/watch?v=Ny3GM1octbo
