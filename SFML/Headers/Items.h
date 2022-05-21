@@ -339,7 +339,7 @@ const set<string> Dagger = {
 	"Claws 8.1",
 	"Claws 8.2",
 
-	"Bloodletter 6.0",
+	/*"Bloodletter 6.0",
 	"Bloodletter 6.1",
 	"Bloodletter 6.2",
 	"Bloodletter 7.0",
@@ -347,7 +347,7 @@ const set<string> Dagger = {
 	"Bloodletter 7.2",
 	"Bloodletter 8.0",
 	"Bloodletter 8.1",
-	"Bloodletter 8.2",
+	"Bloodletter 8.2",*/
 };
 
 const set<string> Hammer = {
@@ -886,9 +886,7 @@ const set <string> ListPlusTwo = {
 	"Soldier Helmet",
 	"Soldier Armor",
 	"Soldier Boots",
-	"Mercenary Hood",
-	"Mercenary Jacket",
-	"Mercenary Shoes",
+	
 
 	
 	"Fire Staff",
@@ -902,14 +900,16 @@ const set <string> ListPlusTwo = {
 const set <string> ListPlusOne = {
 
 	"Battleaxe",
-	"Cursed-Staff",
-	"Frost-Staff",
-	"Arcane-Staff",
-	"Nature-Staff",
-	"Holy-Staff",
 	"Dagger",
 	"Hammer",
 	"Mace",
+};
+
+const set <string> ListPlusThree = {
+
+	"Mercenary Hood",
+	"Mercenary Jacket",
+	"Mercenary Shoes",
 };
 
 const map <string, string> ItemTwoName = {

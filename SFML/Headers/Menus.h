@@ -15,8 +15,9 @@ const map<string, TB_Info> mMenu = {
 	{"Buy" , {Vector2f(50, 100), Vector2f(100, 40), 16}},
 	{"Refresh" , {Vector2f(200, 100), Vector2f(100, 40), 16}},
 	{"Print" , {Vector2f(350, 100), Vector2f(100, 40), 16}},
-	{"Settings" , {Vector2f(50, 150), Vector2f(100, 40), 16}},
-	{"Exit" , {Vector2f(200, 150), Vector2f(100, 40), 16}},
+	{"PrintB" , {Vector2f(50, 150), Vector2f(100, 40), 16}},
+	{"Settings" , {Vector2f(200, 150), Vector2f(100, 40), 16}},
+	{"Exit" , {Vector2f(350, 150), Vector2f(100, 40), 16}},
 
 
 	{"Load" , {Vector2f(100, 400), Vector2f(100, 40), 16}},

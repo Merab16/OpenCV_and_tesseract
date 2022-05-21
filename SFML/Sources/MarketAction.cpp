@@ -399,7 +399,10 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 
 						MoveToEnchantC(item.first.enchant);
 
-						if (CheckList(ListPlusTwo, item.first.name) && item.first.enchant == 0) {
+						if (CheckList(ListPlusThree, item.first.name) && item.first.enchant == 0) {
+							MoveToTierC(item.first.tier + 3);
+						}
+						else if (CheckList(ListPlusTwo, item.first.name) && item.first.enchant == 0) {
 							MoveToTierC(item.first.tier + 2);
 						}
 						else if (CheckList(ListPlusOne, item.first.name) && item.first.enchant == 0) {
@@ -427,6 +430,8 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 							db._EditItemPrice(item.first, el.first, _price);
 							db._Calculate(Items, el.first);
 							db._Sort(profit);
+							SetCursorPos(940, 310);
+							MouseLeftClick();
 							break;
 						}
 

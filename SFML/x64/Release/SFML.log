@@ -1,11 +1,19 @@
-﻿  Generating code
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-D:\C++\Albion_openCV\SFML\SFML\Sources\ScreenCapture.cpp(17): warning C4172: returning address of local variable or temporary: wtext
-D:\C++\Albion_openCV\SFML\SFML\Sources\MarketAction.cpp(302): warning C4715: 'CheckItemLimit': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\MarketAction.cpp(266): warning C4715: 'GetTimesToBuy': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\DataBase.cpp(271): warning C4715: 'CityToIndex': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\MyTime.cpp(127): warning C4715: 'MonthToIndex': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\DataBase.cpp(247): warning C4715: 'IndexToCity': not all control paths return a value
-  All 2207 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+﻿  Game.cpp
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(192,52): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(192,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(688,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(688,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  39 of 2252 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SFML.vcxproj -> D:\C++\Albion_openCV\SFML\x64\Release\SFML.exe

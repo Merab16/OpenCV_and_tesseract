@@ -240,6 +240,9 @@ void Game::MenuConroller(const string& command) {
 	else if (command == "Print") {
 		db->_PrintPrice();
 	}
+	else if (command == "PrintB") {
+		PrintBoughtItems(item_bought);
+	}
 	else if (command == "Settings") {
 		current_wnd = command;
 	}
