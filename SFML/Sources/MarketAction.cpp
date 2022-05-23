@@ -2,10 +2,10 @@
 
 
 
-#define SLEEPING_TIME 500
+#define SLEEPING_TIME 250
 
 
-
+// Ok
 int _ParsePrice(const string& str) {
 	string nstr{};
 	for (size_t i = 0; i < str.size(); ++i) {
@@ -33,11 +33,14 @@ int _ParsePrice(const string& str) {
 
 }
 
+// Не совсем ок
 void _CheckPrice(DataBase& db, const set<set<string>>& Items,
 	int city, bool flag) {
-	
+
 	Sleep(SLEEPING_TIME);
-	LOG_DURATION("CheckPriceC");
+
+	LOG_DURATION("CheckPrice");
+
 	string prev_name{};
 	int prev_tier = -1;
 	int prev_enchant = -1;
@@ -58,7 +61,10 @@ void _CheckPrice(DataBase& db, const set<set<string>>& Items,
 			// flag = false - отталкиваться оттого что имеется
 			if (flag || !(db._isItemCorrect(i, 6))) {
 
+				//Выбор имени
 				if (i.name != prev_name) {
+
+					// Нажатие, чтобы закрыть окно (если открыто)
 					SetCursorPos(937, 310);
 					MouseLeftClick();
 
@@ -66,17 +72,23 @@ void _CheckPrice(DataBase& db, const set<set<string>>& Items,
 					MoveToInsertName();
 					InsertItemName(i.name);
 
+					// Кнопка продать
 					SetCursorPos(1280, 430);
-					Sleep(100);
 					MouseLeftClick();
+
 					prev_tier = -1;
 					prev_enchant = -1;
 				}
+				// Выбор энчатнта
 				if (i.enchant != prev_enchant) {
 					MoveToEnchantC(i.enchant);
 				}
+				// Выбор тира
 				if (i.tier != prev_tier) {
-					if (CheckList(ListPlusTwo, i.name) && i.enchant == 0) {
+					if (CheckList(ListPlusThree, i.name) && i.enchant == 0) {
+						MoveToTierC(i.tier + 3);
+					}
+					else if (CheckList(ListPlusTwo, i.name) && i.enchant == 0) {
 						MoveToTierC(i.tier + 2);
 					}
 					else if (CheckList(ListPlusOne, i.name) && i.enchant == 0) {
@@ -92,11 +104,17 @@ void _CheckPrice(DataBase& db, const set<set<string>>& Items,
 				prev_tier = i.tier;
 				prev_enchant = i.enchant;
 
-			link:
 				int _price = ParseFromImg(ss, "output");
-				if (_price == prev_price && _price != -1) {
-					goto link;
+				while (_price == prev_price && _price != -1) {
+					_price = ParseFromImg(ss, "output");
+					cout << "Error: price don't change\n";
 				}
+
+				//link:
+
+					//if (_price == prev_price && _price != -1) {
+					//	goto link;
+					//}
 
 				prev_price = _price;
 				info.price = _price;
@@ -187,7 +205,7 @@ void _CheckPrice(DataBase& db, const set<set<string>>& Items,
 		++position;
 	}
 }*/
-
+// Ок
 bool CheckList(const set <string>& List, const string& _name) {
 	if (List.count(_name)) {
 		return true;
@@ -195,8 +213,7 @@ bool CheckList(const set <string>& List, const string& _name) {
 	return false;
 }
 
-
-
+// Ок
 int ParseFromImg(const ScreenShot& s_info, string txt_name) {
 	Sleep(500);
 	char _path[64];
@@ -228,79 +245,44 @@ int ParseFromImg(const ScreenShot& s_info, string txt_name) {
 	return _price;
 }
 
-
-int GetTimesToBuy(int tier, int enchant) {
-	if (tier == 6) {
-		if (enchant == 0) {
-			return 20;
-		}
-		else if (enchant == 1) {
-			return 15;
-		}
-		else if (enchant == 2) {
-			return 5;
-		}
-	}
-	else if (tier == 7) {
-		if (enchant == 0) {
-			return 15;
-		}
-		else if (enchant == 1) {
-			return 10;
-		}
-		else if (enchant == 2) {
-			return 1;
-		}
-	}
-	else if (tier == 8) {
-		if (enchant == 0) {
-			return 10;
-		}
-		else if (enchant == 1) {
-			return 5;
-		}
-		else if (enchant == 2) {
-			return 1;
-		}
-	}
-}
-
+// Ок
 bool CheckItemLimit(int tier, int enchant, int size_now) {
 	if (tier == 6) {
 		if (enchant == 0) {
-			return size_now <= 20;
+			return size_now < ListItemLimit.at({ 6, 0 });
 		}
 		else if (enchant == 1) {
-			return size_now <= 15;
+			return size_now < ListItemLimit.at({ 6, 1 });
 		}
 		else if (enchant == 2) {
-			return size_now <= 5;
+			return size_now < ListItemLimit.at({ 6, 2 });
 		}
 	}
 	else if (tier == 7) {
 		if (enchant == 0) {
-			return size_now <= 15;
+			return size_now < ListItemLimit.at({ 7, 0 });
 		}
 		else if (enchant == 1) {
-			return size_now <= 10;
+			return size_now < ListItemLimit.at({ 7, 1 });
 		}
 		else if (enchant == 2) {
-			return size_now <= 1;
+			return size_now < ListItemLimit.at({ 7, 2 });
 		}
 	}
 	else if (tier == 8) {
 		if (enchant == 0) {
-			return size_now <= 10;
+			return size_now < ListItemLimit.at({ 8, 0 });
 		}
 		else if (enchant == 1) {
-			return size_now <= 5;
+			return size_now < ListItemLimit.at({ 8, 1 });
 		}
 		else if (enchant == 2) {
-			return size_now <= 1;
+			return size_now < ListItemLimit.at({ 8, 2 });
 		}
 	}
 }
 
+// Ок
 void PrintItemLimit(map<_Item, int>& ItemLimit) {
 	cout << "Item Limit:\n";
 	for (const auto& el : ItemLimit) {
@@ -308,21 +290,23 @@ void PrintItemLimit(map<_Item, int>& ItemLimit) {
 	}
 }
 
+// Ок
 void PrintBoughtItems(map<_Item, map<int, int>>& item_bought) {
 	for (const auto& el : item_bought) {
 		vector<int> prices{};
 		int Icount = 0;
 		cout << "\t" << el.first << endl;
 		for (const auto& item : el.second) {
-			cout << "[price: count]: " << item.first << ": " << item.second << endl;
+			// cout << "[price: count]: " << item.first << ": " << item.second << endl;
 			prices.push_back(item.first * item.second);
 			Icount += item.second;
 		}
 		int sum = accumulate(prices.begin(), prices.end(), 0);
-		cout << "Avg price: " << sum / Icount << endl;
+		cout << "Avg price: " << sum / Icount << 'x' << Icount << endl;
 	}
 }
 
+// Ок
 void RefreshItemPrice() {
 	const	int DELTAX = 86;
 	const	int DELTAY = 18;
@@ -364,172 +348,267 @@ void RefreshItemPrice() {
 
 }
 
+// Не ок, далеко не ок
 void BuyItem(DataBase& db, const set<set<string>>& Items,
 	map<_Item, int>& ItemLimit,
 	map<_Item, map<int, int>>& item_bought, int profit) {
+
 	ScreenShot ss(1019, 367, 86, 18, "./img_buy.png");
+	ScreenShot ss1(1070, 420, 116, 22, "./img_buy.png");
+
 	db._Sort(profit);
 	db._PrintPrice(0);
+
+	int prev_tier = -1, prev_enchant = -1;
+	string prev_name = " ";
+	string current_pos = " ";
 	const map<int, map<_Item, map<int, _Info>>> sorted = db.GetDbSorted();
 
 	for (auto iter = sorted.rbegin(); iter != sorted.rend(); ++iter) {
+
 		for (const auto& item : iter->second) {
+			
 			for (const auto& el : item.second) {
 				if (el.first != 6 &&
 					(!ItemLimit.count(item.first) ||
 						CheckItemLimit(item.first.tier, item.first.enchant, ItemLimit[item.first]))) {
-					ClearItemName();
-
-					//if (ItemTwoName.count(item.first.name) && item.first.tier == 8) {
-					//	InsertItemName(ItemTwoName.at(item.first.name));
-					//}
-					//else {
-					InsertItemName(item.first.name);
-					//}
-
-					MoveToTier(4);
-					MoveToEnchant(0);
 
 
-					int timesToBuy = GetTimesToBuy(item.first.tier, item.first.enchant);
 
-					for (int i = 0; i < timesToBuy; ++i) {
-						MoveToBuy();
-						//MoveToTierC(item.first.tier);
+					// Если есть артефакт с таким же названием
+					if (ItemAndArtif.count(item.first.name)) {
+						ClearItemName();
+						InsertItemName(item.first.name);
+						prev_tier = -1;
+						prev_enchant = -1;
 
-						MoveToEnchantC(item.first.enchant);
-
-						if (CheckList(ListPlusThree, item.first.name) && item.first.enchant == 0) {
-							MoveToTierC(item.first.tier + 3);
+						if (current_pos != "sell") {
+							SetCursorPos(1385, 415);
+							MouseLeftClick();
+							current_pos = "sell";
 						}
-						else if (CheckList(ListPlusTwo, item.first.name) && item.first.enchant == 0) {
-							MoveToTierC(item.first.tier + 2);
-						}
-						else if (CheckList(ListPlusOne, item.first.name) && item.first.enchant == 0) {
-							MoveToTierC(item.first.tier + 1);
+
+						MoveToTier(4);
+						MoveToEnchant(0);
+						int timesToBuy = 0;
+						if (ItemLimit.count(item.first)) {
+							timesToBuy = ListItemLimit.at({ item.first.tier, item.first.enchant }) - ItemLimit[item.first];
 						}
 						else {
-							MoveToTierC(item.first.tier);
+							timesToBuy = ListItemLimit.at({ item.first.tier, item.first.enchant });
 						}
+						//int timesToBuy = GetTimesToBuy(item.first.tier, item.first.enchant);
 
 
-						int _price = ParseFromImg(ss, "output_buy");
+						for (int i = 0; i < timesToBuy; ++i) {
 
-						if (_price == -1) {
-							continue;
+							MoveToBuy();
+
+							MoveToEnchantC(item.first.enchant);
+
+							if (CheckList(ListPlusThree, item.first.name) && item.first.enchant == 0) {
+								MoveToTierC(item.first.tier + 3);
+							}
+							else if (CheckList(ListPlusTwo, item.first.name) && item.first.enchant == 0) {
+								MoveToTierC(item.first.tier + 2);
+							}
+							else if (CheckList(ListPlusOne, item.first.name) && item.first.enchant == 0) {
+								MoveToTierC(item.first.tier + 1);
+							}
+							else {
+								MoveToTierC(item.first.tier);
+							}
+
+							int _price = ParseFromImg(ss, "output_buy");
+
+							if (_price == -1) {
+								continue;
+							}
+							if (_price <= el.second.price * 1.02) {
+								SetCursorPos(990, 375);
+								MouseLeftClick();
+								MoveToBuy2();
+								ItemLimit[item.first]++;
+								item_bought[item.first][_price]++;
+							}
+							else {
+								system("cls");
+								db._EditItemPrice(item.first, el.first, _price);
+								db._Calculate(Items, el.first);
+								db._Sort(profit);
+								SetCursorPos(940, 310);
+								MouseLeftClick();
+								break;
+							}
 						}
-						if (_price <= el.second.price * 1.02) {
-							SetCursorPos(990, 375);
-							MouseLeftClick();
-							MoveToBuy2();
-							ItemLimit[item.first]++;
-							item_bought[item.first][_price]++;
+					}
+
+					// Если нет артефакта с таким же названием
+					else {
+
+						int timesToBuy = 0;
+						if (ItemLimit.count(item.first)) {
+							timesToBuy = ListItemLimit.at({ item.first.tier, item.first.enchant }) - ItemLimit[item.first];
 						}
 						else {
-							system("cls");
-							db._EditItemPrice(item.first, el.first, _price);
-							db._Calculate(Items, el.first);
-							db._Sort(profit);
-							SetCursorPos(940, 310);
-							MouseLeftClick();
-							break;
+							timesToBuy = ListItemLimit.at({ item.first.tier, item.first.enchant });
 						}
 
+						if (current_pos != "buy") {
+							SetCursorPos(1385, 335);
+							MouseLeftClick();
+							current_pos = "buy";
+						}
 
+						// Чар
+						if (prev_enchant != item.first.enchant) {
+							MoveToEnchant(item.first.enchant);
+							prev_enchant = item.first.enchant;
+						}
+						// Тир
+						if (prev_tier != item.first.tier) {
+							MoveToTier(item.first.tier);
+							prev_tier = item.first.tier;
+						}
+						// Имя
+						if (ItemTwoName.count(item.first.name) && item.first.tier == 8) {
+							ClearItemName();
+							InsertItemName(ItemTwoName.at(item.first.name));
+							prev_name = ItemTwoName.at(item.first.name);
+						}
+						else {
+							if (prev_name != item.first.name) {
+								ClearItemName();
+								InsertItemName(item.first.name);
+								prev_name = item.first.name;
+							}
+						}
 
+						// Скупка
+						for (int i = 0; i < timesToBuy; ++i) {
 
+							int _price = ParseFromImg(ss1, "output_buy");
 
+							if (_price == -1) {
+								continue;
+							}
 
-
-						/*ScreenCapture(WIDTH, HEIGHT, DELTAX, DELTAY, IMG_PATH, NULL);
-
-						Mat img = imread("./img_buy.bmp");
-						imwrite("img_buy.png", img);
-
-						system("tesseract img_buy.png output_buy");
-
-						string str{};
-						ifstream fin("output_buy.txt");
-						getline(fin, str);
-						fin.close();
-						int _price = _ParsePrice(str);*/
-
+							if (_price <= el.second.price * 1.02) {
+								SetCursorPos(1275, 430);
+								MouseLeftClick();
+								MoveToBuy2();
+								ItemLimit[item.first]++;
+								item_bought[item.first][_price]++;
+							}
+							else {
+								system("cls");
+								db._EditItemPrice(item.first, el.first, _price);
+								db._Calculate(Items, el.first);
+								db._Sort(profit);
+								break;
+							}
+						}
 
 					}
 				}
 			}
 		}
+
+		PrintItemLimit(ItemLimit);
+		cout << "Buying finished\n";
 	}
-	PrintItemLimit(ItemLimit);
-	cout << "Buying finished" << endl;
+
 }
 
-void SellItem(map<_Item, map<int, int>>& item_bought,
-	map<_Item, map<int, int>>& item_sold) {
-	string prev_name{};
-	int prev_tier = -1;
-	int prev_enchant = -1;
-	int prev_price = -1;
-	for (const auto& el : item_bought) {
-		if (el.first.name != prev_name) {
-			ClearItemName();
-			MoveToInsertName();
-			InsertItemName(el.first.name);
+// Очень плохо сделана [заброшена]
+	void SellItem(map<_Item, map<int, int>>&item_bought,
+		map<_Item, map<int, int>>&item_sold) {
 
-			prev_tier = -1;
-			prev_enchant = -1;
-		}
-		if (el.first.enchant != prev_enchant) {
-			MoveToEnchant(el.first.enchant);
-		}
-		if (el.first.tier != prev_tier) {
-			MoveToTier(el.first.tier);
-			if (el.first.tier == 8 && ItemTwoName.count(el.first.name)) {
+		/*string prev_name{};
+		int prev_tier = -1;
+		int prev_enchant = -1;
+		int prev_price = -1;
+		for (const auto& el : item_bought) {
+			if (el.first.name != prev_name) {
 				ClearItemName();
 				MoveToInsertName();
-				InsertItemName(ItemTwoName.at(el.first.name));
+				InsertItemName(el.first.name);
+
+				prev_tier = -1;
+				prev_enchant = -1;
+			}
+			if (el.first.enchant != prev_enchant) {
+				MoveToEnchant(el.first.enchant);
+			}
+			if (el.first.tier != prev_tier) {
+				MoveToTier(el.first.tier);
+				if (el.first.tier == 8 && ItemTwoName.count(el.first.name)) {
+					ClearItemName();
+					MoveToInsertName();
+					InsertItemName(ItemTwoName.at(el.first.name));
+				}
+			}
+
+			prev_name = el.first.name;
+			prev_tier = el.first.tier;
+			prev_enchant = el.first.enchant;
+
+			int counter = 0;
+			for (const auto& item : el.second) {
+				counter += item.second;
+			}
+
+
+			for (int _i = 0; _i < counter; ++_i) {
+
+				SetCursorPos(1280, 430);
+				MouseLeftClick();
+
+				Sleep(100);
+				SetCursorPos(847, 576);
+				MouseLeftClick();
+				KeyBrdBtnPress('1');
+
+				int _price = ParseFromImg({ 1019, 367 , 86, 18 , "./img.png" },
+					"output");
+				if (_price == -1) {
+					break;
+				}
+				_price--;
+				MoveToEditPrice();
+				string _string = to_string(_price);
+				for (const auto& el : _string) {
+					KeyBrdBtnPress(el);
+				}
+				UpdateOrder();
+
+				item_sold[el.first][_price]++;
+				Sleep(100);
 			}
 		}
+		*/
 
-		prev_name = el.first.name;
-		prev_tier = el.first.tier;
-		prev_enchant = el.first.enchant;
+		for (int i = 0; i < item_bought.size() * 2.1; ++i) {
 
-		int counter = 0;
-		for (const auto& item : el.second) {
-			counter += item.second;
-		}
-
-
-		for (int _i = 0; _i < counter; ++_i) {
-
-			SetCursorPos(1280, 430);
+			SetCursorPos(1275, 430);
 			MouseLeftClick();
+			Sleep(30);
 
-			Sleep(100);
-			SetCursorPos(847, 576);
+			SetCursorPos(563, 635);
 			MouseLeftClick();
-			KeyBrdBtnPress('1');
+			Sleep(50);
 
-			int _price = ParseFromImg({ 1019, 367 , 86, 18 , "./img.png" },
-				"output");
-			if (_price == -1) {
-				break;
-			}
-			_price--;
-			MoveToEditPrice();
-			string _string = to_string(_price);
-			for (const auto& el : _string) {
-				KeyBrdBtnPress(el);
-			}
-			UpdateOrder();
+			SetCursorPos(885, 735);
+			MouseLeftClick();
+			Sleep(50);
 
-			item_sold[el.first][_price]++;
-			Sleep(100);
 		}
+
+
+
+
+		system("cls");
+		cout << "Selling finished!" << endl;
+
 	}
-
-	system("cls");
-	cout << "Selling finished!" << endl;
-}
 

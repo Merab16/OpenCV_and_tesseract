@@ -916,3 +916,27 @@ const map <string, string> ItemTwoName = {
 	{"Great Fire Staff", "Vendetta's Wrath"},
 	{"Greataxe", "Hand Of Khor"},
 };
+
+const set<string> ItemAndArtif = {
+	"Halberd",
+
+};
+
+
+// Лимит предметов
+
+const map <pair<int, int>, int> ListItemLimit = {
+	{{6, 0} , 20},
+	{{6, 1} , 15},
+	{{6, 2} , 5},
+
+	{{7, 0} , 15},
+	{{7, 1}, 10},
+	{{7, 2}, 1},
+
+	{{8, 0}, 10},
+	{{8, 1}, 3},
+	{{8, 2}, 1},
+};
+
+

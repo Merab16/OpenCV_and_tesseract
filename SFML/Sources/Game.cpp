@@ -126,7 +126,7 @@ void Game::InitVersion() {
 	cout << "InitVersion\n";
 	version = new Text;
 	version->setFont(font);
-	version->setString("Version 0.1.0");
+	version->setString("Version 0.2.0");
 	version->setCharacterSize(12);
 	version->setPosition({ 5, 480 });
 }
@@ -245,6 +245,9 @@ void Game::MenuConroller(const string& command) {
 	}
 	else if (command == "Settings") {
 		current_wnd = command;
+	}
+	else if (command == "Sell") {
+		SellItem(item_bought, item_sold);
 	}
 	else if (command == "Save") {
 		db->_SaveData();

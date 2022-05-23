@@ -54,7 +54,7 @@ map<int, pair<int, int>> QualityPosition = {
 
 // Mouse and Keyboard Events
 void MouseLeftClick() {
-	Sleep(150);
+	Sleep(120);
 	INPUT Inputs[1] = { 0 };
 
 	Inputs[0].type = INPUT_MOUSE;

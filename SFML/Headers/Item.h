@@ -1,13 +1,13 @@
 #pragma once
-#include "MyTime.h"
-#include "Items.h"
-
-
-#pragma once
 #include <string>
 #include <tuple>
 #include <map>
 
+
+
+#pragma once
+#include "MyTime.h"
+#include "Items.h"
 
 
 using namespace std;
@@ -17,6 +17,8 @@ struct _Item
 	string name;
 	int tier;
 	int enchant;
+
+	
 };
 
 struct _Info {
