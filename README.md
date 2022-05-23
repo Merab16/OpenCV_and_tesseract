@@ -17,7 +17,13 @@ https://youtu.be/zakgIiXpaW0
 
 OpenCV - https://www.youtube.com/watch?v=Ny3GM1octbo
 
+Так же, после распаковки архива, измените путь к библиотеке SFML: https://youtu.be/54SkBSKNiP8
+
+
+
+
 Перед запуском проекта, убедитесь что выбрана вкладка Release, а не Debug https://imgur.com/a/hRD6RqJ
+
 
 Если возникают вопросы, оставляйте комментарии под роликами или в пишите в дискорд Мераб#5740
 
