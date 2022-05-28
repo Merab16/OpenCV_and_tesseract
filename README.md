@@ -24,31 +24,31 @@ OpenCV - https://www.youtube.com/watch?v=Ny3GM1octbo
 Если возникают вопросы, оставляйте комментарии под роликами или в пишите в дискорд Мераб#5740
 
 Предметы, которые нужно взять если вы выбрали следующие категории:
-  Curse: {Great Cursed Staff, Demonic Staff, Lifecurse Staff}
-  Arcane: {Great Arcane Staff, Enigmatic Staff, Witchwork Staff}
-  Fire: {Great Fire Staff, Infernal Staff}
-  Frost: {Great Frost Staff, Glacial Staff}
-  Holy: {Great Holy Staff, Divine Staff}
-  Nature: {Great Nature Staff, Wild Staff, Druidic Staff}
+* Curse: {Great Cursed Staff, Demonic Staff, Lifecurse Staff}
+* Arcane: {Great Arcane Staff, Enigmatic Staff, Witchwork Staff}
+* Fire: {Great Fire Staff, Infernal Staff}
+* Frost: {Great Frost Staff, Glacial Staff}
+* Holy: {Great Holy Staff, Divine Staff}
+* Nature: {Great Nature Staff, Wild Staff, Druidic Staff}
   
-  Axe: {Battleaxe, Greataxe, Halberd, Carrioncaller}
-  Dagger: {Dagger Pair, Claws}
-  Hammer: {Polehammer, Great Hammer, Tombhammer}   
-  Mace: {Heavy Mace, Morning Star, Bedrock Mace}
-  Sword: {Broadsword, Claymore, Dual Swords, Clarent Blade}   
+* Axe: {Battleaxe, Greataxe, Halberd, Carrioncaller}
+* Dagger: {Dagger Pair, Claws}
+* Hammer: {Polehammer, Great Hammer, Tombhammer}   
+* Mace: {Heavy Mace, Morning Star, Bedrock Mace}
+* Sword: {Broadsword, Claymore, Dual Swords, Clarent Blade}   
   
-  OffHand: {Tome of Spells, Shield, Sarcopfagus, Torch}  
+* OffHand: {Tome of Spells, Shield, Sarcopfagus, Torch}  
   
-  Hood: {Stalker Hood, Mercenary Hood, Hunter Hood, Assassin Hood}
-  Jacket: {Stalker Jacket, Mercenary Jacket, Hunter Jacket, Assassin Jacket}
-  Shoes: {Stalker Shoes, Mercenary Shoes, Hunter Shoes, Assassin Shoes}  
+* Hood: {Stalker Hood, Mercenary Hood, Hunter Hood, Assassin Hood}
+* Jacket: {Stalker Jacket, Mercenary Jacket, Hunter Jacket, Assassin Jacket}
+* Shoes: {Stalker Shoes, Mercenary Shoes, Hunter Shoes, Assassin Shoes}  
   
-  Helmet: {Soldier Helmet, Knight Helmet, Guardian Helmet, Graveguard Helmet}  
-  Armor: {Soldier Armor, Knight Armor, Guardian Armor, Graveguard Armor}  
-  Boots: {Soldier Boots, Knight Boots, Guardian Boots, Graveguard Boots} 
+* Helmet: {Soldier Helmet, Knight Helmet, Guardian Helmet, Graveguard Helmet}  
+* Armor: {Soldier Armor, Knight Armor, Guardian Armor, Graveguard Armor}  
+* Boots: {Soldier Boots, Knight Boots, Guardian Boots, Graveguard Boots} 
   
-  Bag: {Bag}  
-  SatchelOfInsight: {SatchelOfInsight}
+* Bag: {Bag}  
+* SatchelOfInsight: {SatchelOfInsight}
   
 
 v. 0.2.0 
