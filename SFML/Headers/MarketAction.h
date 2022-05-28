@@ -28,8 +28,6 @@ int _ParsePrice(const string& str);
 
 int ParseFromImg(const ScreenShot& s_info, string txt_name);
 
-int GetTimesToBuy(int tier, int enchant);
-
 bool CheckItemLimit(int tier, int enchant, int size_now);
 
 void PrintItemLimit(map<_Item, int>& ItemLimit);
@@ -42,6 +40,8 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 	map<_Item, int>& ItemLimit,
 	map<_Item, map<int, int>>& item_bought, int profit);
 
-void SellItem(map<_Item, map<int, int>>& item_bought,
-	map<_Item, map<int, int>>& item_sold);
+void SellItem(int count);
 
+void OrderItem(DataBase& db, const set<set<string>>& Items);
+
+void RefreshOrder();

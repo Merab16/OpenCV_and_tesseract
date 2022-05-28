@@ -1,21 +1,23 @@
 #include "../Headers/Game.h"
 
-// mSettings support variables
+// mCategories support variables
 map<string, bool> mIsImageSelected;
 
-
 Game::Game()
-{	
+{
 	LOG_DURATION("Load took: ");
 	initWindow();
 	InitEvent();
 	InitFont();
 	InitTextVar();
 	InitMousePos();
-	InitVecTB(vTB_menu, mMenu);
+
+	InitMenu();
+	//InitVecTB(vTB_menu, mMenu);
+
 	InitVecTB(vTB_check, mCheck);
 	InitVecTB(vTB_calculate, mCalculate);
-	InitVecMI(vMI_settings, mSettings);
+	InitCategories();
 	InitBackground();
 	InitDataBase();
 }
@@ -28,7 +30,7 @@ Game::~Game()
 		wnd_stack.pop();
 	}
 
-	DeleteVecMI(vMI_settings);
+	DeleteCategories();
 
 	DeleteVecTB(vTB_check);
 	DeleteVecTB(vTB_calculate);
@@ -38,7 +40,7 @@ Game::~Game()
 	DeleteVersion();
 	DeleteBackground();
 
-	
+
 }
 
 
@@ -48,7 +50,7 @@ void Game::initWindow()
 {
 	cout << "initWindow\n";
 	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "myGame", sf::Style::Close);
-	
+
 	window->setFramerateLimit(60);
 	window->setVerticalSyncEnabled(false);
 	wnd_stack.push(window);
@@ -81,7 +83,7 @@ void Game::InitTextVar() {
 	fps.setFillColor(Color::White);
 	fps.setPosition(Vector2f(5.f, 5.f));
 
-	
+
 	InitVersion();
 
 }
@@ -95,26 +97,26 @@ void Game::InitVecTB(vector<TextBox*>& TB,
 	for (const auto& el : m) {
 		EmptyBox(rect, el.second.pos, el.second.size);
 		CreateText(text, el.second.pos, font, el.first, el.second.font_size);
-		TB.push_back(new TextBox( rect, text ));
+		TB.push_back(new TextBox(rect, text));
 	}
 }
 
-void Game::InitVecMI(vector<MyImg*>& MI,
-	const map<string, MI_Info> m) {
-	cout << "InitVecMI\n";
-	for (const auto& el : m) {
-		MyImg* img = new MyImg(el.first, el.second.pos);
-		MI.push_back(img);
-	}
-
-}
+//void Game::InitVecMI(vector<MyImg*>& MI,
+//	const map<string, MI_Info> m) {
+//	cout << "InitVecMI\n";
+//	for (const auto& el : m) {
+//		MyImg* img = new MyImg(el.first, el.second.pos);
+//		MI.push_back(img);
+//	}
+//
+//}
 
 
 void Game::InitBackground() {
 	cout << "InitBackground\n";
 	background = new MyImg("Backgrnd", { -100, -20 });
 	background->sprite.setScale({ 0.8f, 0.8f });
-	
+
 }
 
 void Game::InitDataBase() {
@@ -126,10 +128,50 @@ void Game::InitVersion() {
 	cout << "InitVersion\n";
 	version = new Text;
 	version->setFont(font);
-	version->setString("Version 0.2.0");
+	version->setString("Version 0.3.0");
 	version->setCharacterSize(12);
 	version->setPosition({ 5, 480 });
 }
+
+void Game::InitMenu() {
+
+	RectangleShape rect;
+	Text text;
+
+	Vector2f s_pos(50, 50);
+	Vector2f size(100, 40);
+	size_t f_size = 16;
+
+
+	for (size_t i = 0; i < vMenu.size(); ++i) {
+
+		EmptyBox(rect, { s_pos.x + 150 * (i % 3) , s_pos.y + 50 * int(i / 3) }, size);
+		CreateText(text, { s_pos.x + 150 * (i % 3) , s_pos.y + 50 * int(i / 3) }, font, vMenu[i], f_size);
+		vTB_menu.push_back(new TextBox(rect, text));
+
+	}
+
+
+}
+
+void Game::InitCategories() {
+	cout << "InitCategories\n";
+	MyImg* img;
+	for (size_t i = 0; i < vCategories.size(); ++i) {
+		if (vCategories[i] == "Back") {
+			img = new MyImg(vCategories[i], Vector2f(50.f, 400.f));
+		}
+		else {
+			img = new MyImg(vCategories[i], { 40.f + 75 * (i % 6), 50.f + 75 * (i / 6) });
+		}
+		vMI_categories.push_back(img);
+
+	}
+
+
+}
+
+
 
 // Delete 
 
@@ -138,12 +180,12 @@ void Game::DeleteBackground() {
 	delete background;
 }
 
-void Game::DeleteVecMI(vector<MyImg*>& MI) {
-	cout << "DeleteVecMI\n";
-	for (const auto& el : MI) {
-		delete el;
-	}
-}
+//void Game::DeleteVecMI(vector<MyImg*>& MI) {
+//	cout << "DeleteVecMI\n";
+//	for (const auto& el : MI) {
+//		delete el;
+//	}
+//}
 
 void Game::DeleteVecTB(vector<TextBox*>& MI) {
 	cout << "DeleteVecTB\n";
@@ -165,6 +207,13 @@ void Game::DeleteEvent() {
 void Game::DeleteVersion() {
 	cout << "DeleteVersion\n";
 	delete version;
+}
+
+void Game::DeleteCategories() {
+	cout << "DeleteCategories\n";
+	for (const auto& el : vMI_categories) {
+		delete el;
+	}
 }
 
 
@@ -226,10 +275,10 @@ void Game::MenuConroller(const string& command) {
 	}
 	else if (command == "Calculate") {
 		current_wnd = command;
-		
+
 	}
 	else if (command == "Sort") {
-		current_wnd = "EnterWndS";	
+		current_wnd = "EnterWndS";
 	}
 	else if (command == "Buy") {
 		current_wnd = "EnterWndB";
@@ -237,23 +286,29 @@ void Game::MenuConroller(const string& command) {
 	else if (command == "Refresh") {
 		RefreshItemPrice();
 	}
+	else if (command == "RefreshOrders") {
+		RefreshOrder();
+	}
 	else if (command == "Print") {
 		db->_PrintPrice();
 	}
 	else if (command == "PrintB") {
 		PrintBoughtItems(item_bought);
 	}
-	else if (command == "Settings") {
+	else if (command == "Categories") {
 		current_wnd = command;
 	}
 	else if (command == "Sell") {
-		SellItem(item_bought, item_sold);
+		current_wnd = "Sell";
 	}
 	else if (command == "Save") {
 		db->_SaveData();
 	}
 	else if (command == "Load") {
 		db->_ReadData();
+	}
+	else if (command == "Order") {
+		OrderItem(*db, selected_categories);
 	}
 	else if (command == "Exit") {
 		wnd_stack.top()->close();
@@ -264,37 +319,37 @@ void Game::CheckConroller(const string& command) {
 	if (command == "THETFORD") {
 
 		_CheckPrice(*db, selected_categories, 0, 1);
-		
+
 	}
 	else if (command == "FORT STERLING") {
-		
+
 		_CheckPrice(*db, selected_categories, 1, 1);
-		
+
 	}
 	else if (command == "LYMHURST") {
-		
+
 		_CheckPrice(*db, selected_categories, 2, 1);
-		
+
 	}
 	else if (command == "BRIDGEWATCH") {
-		
+
 		_CheckPrice(*db, selected_categories, 3, 1);
-		
+
 	}
 	else if (command == "MARTLOCK") {
-		
+
 		_CheckPrice(*db, selected_categories, 4, 1);
-		
+
 	}
 	else if (command == "CAERLEON") {
-		
+
 		_CheckPrice(*db, selected_categories, 5, 1);
-		
+
 	}
 	else if (command == "BLACK MARKET") {
-		
+
 		_CheckPrice(*db, selected_categories, 6, 1);
-		
+
 	}
 	else if (command == "BACK") {
 		current_wnd = "Menu";
@@ -340,8 +395,7 @@ void Game::BuyController() {
 	BuyItem(*db, selected_categories, ItemLimit, item_bought, stoi(_profit));
 }
 
-
-void Game::SettingsController(const string& command) {
+void Game::CategoriesController(const string& command) {
 	if (command == "Axe") {
 		if (mIsImageSelected[command]) {
 			selected_categories.erase(Axe);
@@ -553,7 +607,28 @@ void Game::SettingsController(const string& command) {
 			mIsImageSelected[command] = 1;
 		}
 	}
+	else if (command == "Sword") {
+		if (mIsImageSelected[command]) {
+			selected_categories.erase(Sword);
+			mIsImageSelected[command] = 0;
+		}
+		else {
+			selected_categories.insert(Sword);
+			mIsImageSelected[command] = 1;
+		}
+	}
+	else if (command == "OffHand") {
+		if (mIsImageSelected[command]) {
+			selected_categories.erase(OffHand);
+			mIsImageSelected[command] = 0;
+		}
+		else {
+			selected_categories.insert(OffHand);
+			mIsImageSelected[command] = 1;
+		}
+	}
 	else if (command == "Back") {
+
 		current_wnd = "Menu";
 	}
 }
@@ -561,12 +636,14 @@ void Game::SettingsController(const string& command) {
 
 
 void Game::EnterToWindow() {
-	
+
 	if (sfEvent->key.code == Keyboard::Escape) {
 		wnd_stack.top()->close();
 	}
-	if (current_wnd == "EnterWndS" || current_wnd == "EnterWndB") {
-		
+	if (current_wnd == "EnterWndS" ||
+		current_wnd == "EnterWndB" ||
+		current_wnd == "Sell") {
+
 		if (sfEvent->key.code == Keyboard::Num0) {
 			_profit += '0';
 		}
@@ -602,19 +679,22 @@ void Game::EnterToWindow() {
 				_profit.erase(_profit.size() - 1);
 		}
 		else if (sfEvent->key.code == Keyboard::Enter) {
-			
+
 			if (current_wnd == "EnterWndS") {
 				SortController();
 			}
 			else if (current_wnd == "EnterWndB") {
-				BuyController();	
+				BuyController();
+			}
+			else if (current_wnd == "Sell") {
+				SellItem(stoi(_profit));
 			}
 			current_wnd = "Menu";
 			_profit = "";
 		}
 	}
-	
-	
+
+
 }
 
 
@@ -664,12 +744,12 @@ void Game::updateSFMLEvents()
 				CalculateController(isButtonClicked(vTB_calculate));
 			}
 
-			else if (current_wnd == "Settings") {
-				SettingsController(isButtonClicked(vMI_settings));
+			else if (current_wnd == "Categories") {
+				CategoriesController(isButtonClicked(vMI_categories));
 			}
 			break;
-			
-	
+
+
 
 
 		}
@@ -706,7 +786,7 @@ void Game::render()
 		drawTB(vTB_menu);
 		isButtonHover(vTB_menu);
 	}
-	else if (current_wnd == "Check" ) {
+	else if (current_wnd == "Check") {
 		drawTB(vTB_check);
 		isButtonHover(vTB_check);
 	}
@@ -714,13 +794,15 @@ void Game::render()
 		drawTB(vTB_calculate);
 		isButtonHover(vTB_calculate);
 	}
-	else if (current_wnd == "Settings") {
-		drawMI(vMI_settings);
+	else if (current_wnd == "Categories") {
+		drawMI(vMI_categories);
 	}
-	else if (current_wnd == "EnterWndS" || current_wnd == "EnterWndB") {
+	else if (current_wnd == "EnterWndS" ||
+		current_wnd == "EnterWndB" ||
+		current_wnd == "Sell") {
 		drawEnterWnd();
 	}
-	
+
 
 	//Loading();
 
@@ -740,6 +822,8 @@ void Game::drawTB(const vector<TextBox*>& TB) {
 void Game::drawMI(const vector<MyImg*>& MI) {
 	for (const auto& el : MI) {
 		wnd_stack.top()->draw(el->sprite);
+
+
 		if (mIsImageSelected[el->category]) {
 			wnd_stack.top()->draw(
 				CreateFrame(el->sprite.getPosition(),

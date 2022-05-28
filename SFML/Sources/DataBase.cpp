@@ -187,6 +187,10 @@ map<int, map<_Item, map<int, _Info>>> DataBase::GetDbSorted() const {
 	return _db_sorted;
 }
 
+const int DataBase::GetItemPriceDB(const _Item& item) const {
+	return _db.at(item).at(6).price;
+}
+
 
 
 

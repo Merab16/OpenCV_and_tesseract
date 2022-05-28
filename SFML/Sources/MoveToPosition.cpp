@@ -20,7 +20,8 @@ map<int, pair<int, int>> TierPositionC = {
 	{7, {500, 509}},
 	{8, {500, 535}},
 	{9, {500, 563}},
-	{10, {500, 590}}
+	{10, {500, 590}},
+	{11, {500, 617}},
 };
 
 // Coordinates of position all the enchant items; 

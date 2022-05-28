@@ -79,6 +79,8 @@ public:
 
 	map<int, map<_Item, map<int, _Info>>> GetDbSorted() const;
 
+	const int GetItemPriceDB(const _Item& item) const ;
+
 
 
 };

@@ -47,6 +47,7 @@ private:
 	map<_Item, map<int, int>> item_bought;
 	map<_Item, map<int, int>> item_sold;
 	map<_Item, int> total_profit;
+	map<_Item, map<int, int>> item_order;
 
 
 	// Mouse
@@ -73,7 +74,7 @@ private:
 	vector<TextBox*>	vTB_calculate;
 
 	// Settings
-	vector<MyImg*> vMI_settings;
+	vector<MyImg*> vMI_categories;
 
 	// EnterWnd
 	string _profit = "";
@@ -96,22 +97,25 @@ private:
 	void InitTextVar();
 	void InitVecTB(vector<TextBox*>& TB,
 		const map<string, TB_Info> m);
-	void InitVecMI(vector<MyImg*>& MI,
-		const map<string, MI_Info> m);
-	void InitVecLoading();
+	//void InitVecMI(vector<MyImg*>& MI,
+	//	const map<string, MI_Info> m);
+	//void InitVecLoading();
 	void InitBackground();
 	void InitDataBase();
 	void InitVersion();
+	void InitMenu();
+	void InitCategories();
 
 
 	// Delete
 
 	void DeleteBackground();
-	void DeleteVecMI(vector<MyImg*>& MI);
+	//void DeleteVecMI(vector<MyImg*>& MI);
 	void DeleteVecTB(vector<TextBox*>& MI);
 	void DeleteDataBase();
 	void DeleteEvent();
 	void DeleteVersion();
+	void DeleteCategories();
 
 
 public:
@@ -130,7 +134,7 @@ public:
 	void CheckConroller(const string& command);
 	void SortController();
 	void BuyController();
-	void SettingsController(const string& command);
+	void CategoriesController(const string& command);
 	
 	void EnterToWindow();
 	

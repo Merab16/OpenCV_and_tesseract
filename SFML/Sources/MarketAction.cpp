@@ -1,8 +1,32 @@
 #include "../Headers/MarketAction.h"
 
-
-
 #define SLEEPING_TIME 250
+
+//struct OrderConfig {
+//	map <pair<int, int>, int> ListItemLimitOrder = {
+//		{{6, 0} , 5},
+//		{{6, 1} , 2},
+//		{{6, 2} , 1},
+//
+//		{{7, 0}, 3},
+//		{{7, 1}, 2},
+//		{{7, 2}, 1},
+//
+//		{{8, 0}, 2},
+//		{{8, 1}, 1},
+//		{{8, 2}, 0},
+//	};
+//
+//	
+//	int up_border = 0.65;
+//	int low_border = 0.1;
+//
+//
+//} OrderConfig;
+
+
+
+
 
 
 // Ok
@@ -367,7 +391,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 	for (auto iter = sorted.rbegin(); iter != sorted.rend(); ++iter) {
 
 		for (const auto& item : iter->second) {
-			
+
 			for (const auto& el : item.second) {
 				if (el.first != 6 &&
 					(!ItemLimit.count(item.first) ||
@@ -521,94 +545,277 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 }
 
 // Очень плохо сделана [заброшена]
-	void SellItem(map<_Item, map<int, int>>&item_bought,
-		map<_Item, map<int, int>>&item_sold) {
+void SellItem(int count) {
 
-		/*string prev_name{};
-		int prev_tier = -1;
-		int prev_enchant = -1;
-		int prev_price = -1;
-		for (const auto& el : item_bought) {
-			if (el.first.name != prev_name) {
+	/*string prev_name{};
+	int prev_tier = -1;
+	int prev_enchant = -1;
+	int prev_price = -1;
+	for (const auto& el : item_bought) {
+		if (el.first.name != prev_name) {
+			ClearItemName();
+			MoveToInsertName();
+			InsertItemName(el.first.name);
+
+			prev_tier = -1;
+			prev_enchant = -1;
+		}
+		if (el.first.enchant != prev_enchant) {
+			MoveToEnchant(el.first.enchant);
+		}
+		if (el.first.tier != prev_tier) {
+			MoveToTier(el.first.tier);
+			if (el.first.tier == 8 && ItemTwoName.count(el.first.name)) {
 				ClearItemName();
 				MoveToInsertName();
-				InsertItemName(el.first.name);
+				InsertItemName(ItemTwoName.at(el.first.name));
+			}
+		}
+
+		prev_name = el.first.name;
+		prev_tier = el.first.tier;
+		prev_enchant = el.first.enchant;
+
+		int counter = 0;
+		for (const auto& item : el.second) {
+			counter += item.second;
+		}
+
+
+		for (int _i = 0; _i < counter; ++_i) {
+
+			SetCursorPos(1280, 430);
+			MouseLeftClick();
+
+			Sleep(100);
+			SetCursorPos(847, 576);
+			MouseLeftClick();
+			KeyBrdBtnPress('1');
+
+			int _price = ParseFromImg({ 1019, 367 , 86, 18 , "./img.png" },
+				"output");
+			if (_price == -1) {
+				break;
+			}
+			_price--;
+			MoveToEditPrice();
+			string _string = to_string(_price);
+			for (const auto& el : _string) {
+				KeyBrdBtnPress(el);
+			}
+			UpdateOrder();
+
+			item_sold[el.first][_price]++;
+			Sleep(100);
+		}
+	}
+	*/
+
+	for (int i = 0; i < count; ++i) {
+
+		SetCursorPos(1275, 430);
+		MouseLeftClick();
+		Sleep(30);
+
+		SetCursorPos(563, 635);
+		MouseLeftClick();
+		Sleep(50);
+
+		SetCursorPos(885, 735);
+		MouseLeftClick();
+		Sleep(50);
+
+	}
+
+	system("cls");
+	cout << "Selling finished!" << endl;
+
+}
+
+
+void OrderItem(DataBase& db, const set<set<string>>& Items) {
+
+	int prev_tier = -1, prev_enchant = -1;
+	int prev_price = -1;
+	string prev_name = " ";
+
+	ScreenShot ss(1260, 367, 86, 18, "./img.png");
+
+	for (const auto& el : Items) {
+	
+		for (const auto& item : el) {
+			
+			_Item i = _ParseItem(item);
+			int BMprice = db.GetItemPriceDB(i);
+			
+			//Выбор имени
+			if (i.name != prev_name) {
+
+				// Нажатие, чтобы закрыть окно (если открыто)
+				SetCursorPos(937, 310);
+				MouseLeftClick();
+
+				ClearItemName();
+				MoveToInsertName();
+				InsertItemName(i.name);
+
+				// Кнопка продать
+				SetCursorPos(1280, 430);
+				MouseLeftClick();
 
 				prev_tier = -1;
 				prev_enchant = -1;
 			}
-			if (el.first.enchant != prev_enchant) {
-				MoveToEnchant(el.first.enchant);
+			
+			// Выбор энчатнта
+			if (i.enchant != prev_enchant) {
+				MoveToEnchantC(i.enchant);
 			}
-			if (el.first.tier != prev_tier) {
-				MoveToTier(el.first.tier);
-				if (el.first.tier == 8 && ItemTwoName.count(el.first.name)) {
-					ClearItemName();
-					MoveToInsertName();
-					InsertItemName(ItemTwoName.at(el.first.name));
+			
+			// Выбор тира
+			if (i.tier != prev_tier) {
+				if (CheckList(ListPlusThree, i.name) && i.enchant == 0) {
+					MoveToTierC(i.tier + 3);
+				}
+				else if (CheckList(ListPlusTwo, i.name) && i.enchant == 0) {
+					MoveToTierC(i.tier + 2);
+				}
+				else if (CheckList(ListPlusOne, i.name) && i.enchant == 0) {
+					MoveToTierC(i.tier + 1);
+				}
+				else {
+					MoveToTierC(i.tier);
 				}
 			}
 
-			prev_name = el.first.name;
-			prev_tier = el.first.tier;
-			prev_enchant = el.first.enchant;
+			
 
-			int counter = 0;
-			for (const auto& item : el.second) {
-				counter += item.second;
+			prev_name = i.name;
+			prev_tier = i.tier;
+			prev_enchant = i.enchant;
+
+			SetCursorPos(561, 540);
+			MouseLeftClick();
+
+			int _price = ParseFromImg(ss, "output");
+
+
+			while (_price == prev_price && _price != -1) {
+				_price = ParseFromImg(ss, "output");
+				cout << "Error: price don't change\n";
 			}
 
+			// Если цена ордера не превышает 10% от цены на черном рынке, то ордер не ставится
+			if (_price > BMprice * (1 - 0.1)) {
+				continue;
+			}
+			else {
 
-			for (int _i = 0; _i < counter; ++_i) {
 
-				SetCursorPos(1280, 430);
+				prev_price = _price;
+
+				// Выбираем количество 
+				SetCursorPos(575, 575);
 				MouseLeftClick();
 
-				Sleep(100);
-				SetCursorPos(847, 576);
-				MouseLeftClick();
-				KeyBrdBtnPress('1');
-
-				int _price = ParseFromImg({ 1019, 367 , 86, 18 , "./img.png" },
-					"output");
-				if (_price == -1) {
-					break;
-				}
-				_price--;
-				MoveToEditPrice();
-				string _string = to_string(_price);
-				for (const auto& el : _string) {
+				string s_count = to_string(ListItemLimitOrder.at({ i.tier, i.enchant }));
+				for (const auto& el : s_count) {
 					KeyBrdBtnPress(el);
 				}
-				UpdateOrder();
 
-				item_sold[el.first][_price]++;
-				Sleep(100);
+
+				// Выбираем цену
+
+
+				if (_price < 0.65 * BMprice) {
+					_price = 0.65 * BMprice;
+
+					string s_price = to_string(_price);
+
+					// Нажатие на область ввода цены
+					SetCursorPos(632, 632);
+					MouseLeftClick();
+
+					for (const auto& el : s_price) {
+						KeyBrdBtnPress(el);
+					}
+
+				}
+				else {
+					// Нажатие на +1 серебро для ордера
+					SetCursorPos(862, 635);
+					MouseLeftClick();
+
+				}
+
+				MoveToBuy2();
+
+				// Подтверждение покупки
+				SetCursorPos(807, 550);
+				MouseLeftClick();
+
+				// Подтверждение если не можете носить итем
+				SetCursorPos(805, 575);
+				MouseLeftClick();
+
+				MoveToBuy();
+				prev_tier = -1;
+				prev_enchant = -1;
 			}
-		}
-		*/
-
-		for (int i = 0; i < item_bought.size() * 2.1; ++i) {
-
-			SetCursorPos(1275, 430);
-			MouseLeftClick();
-			Sleep(30);
-
-			SetCursorPos(563, 635);
-			MouseLeftClick();
-			Sleep(50);
-
-			SetCursorPos(885, 735);
-			MouseLeftClick();
-			Sleep(50);
 
 		}
-
-
-
-
-		system("cls");
-		cout << "Selling finished!" << endl;
-
 	}
+
+	// Нажатие на крестик
+	SetCursorPos(937, 310);
+	MouseLeftClick();
+
+}
+
+
+void RefreshOrder() {
+	const	int DELTAX = 86;
+	const	int DELTAY = 18;
+	char IMG_PATH[] = "./img.bmp";
+
+	ScreenShot ss(901, 400, 28, 21, "./img.png");
+
+	int prev_price = 0;
+
+	while (true) {
+
+		int date = ParseFromImg(ss, "output");
+
+		if (date < 29) {
+			prev_price = ParseFromImg({ 1054, 400,  86, 18, "./img.png" }, "output");
+			//cout << "prev_price = " << prev_price << endl;
+			MoveToEdit();
+
+
+			int _price = ParseFromImg({ 1260, 367 , 86, 18 , "./img.png" },
+				"output");
+
+			MoveToEditPrice();
+
+			++_price;
+			if (_price < prev_price * 1.1) {
+				cout << "Price is so low" << endl;
+				break;
+			}
+			string _string = to_string(_price);
+			for (const auto& el : _string) {
+				KeyBrdBtnPress(el);
+			}
+
+			UpdateOrder();
+		}
+		else {
+			break;
+		}
+	}
+
+
+}
+
+
 

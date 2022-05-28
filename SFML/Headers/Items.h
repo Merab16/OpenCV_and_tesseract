@@ -128,7 +128,7 @@ const set<string> Fire = {
 	"Infernal-Staff 8.1",
 	"Infernal-Staff 8.2",
 
-	"Wildfire-Staff 6.0",
+	/*"Wildfire-Staff 6.0",
 	"Wildfire-Staff 6.1",
 	"Wildfire-Staff 6.2",
 	"Wildfire-Staff 7.0",
@@ -136,7 +136,7 @@ const set<string> Fire = {
 	"Wildfire-Staff 7.2",
 	"Wildfire-Staff 8.0",
 	"Wildfire-Staff 8.1",
-	"Wildfire-Staff 8.2",
+	"Wildfire-Staff 8.2",*/
 };
 
 const set<string> Frost = {
@@ -170,7 +170,7 @@ const set<string> Frost = {
 	"Glacial-Staff 8.1",
 	"Glacial-Staff 8.2",
 
-	"Hoarfrost-Staff 6.0",
+	/*"Hoarfrost-Staff 6.0",
 	"Hoarfrost-Staff 6.1",
 	"Hoarfrost-Staff 6.2",
 	"Hoarfrost-Staff 7.0",
@@ -178,7 +178,7 @@ const set<string> Frost = {
 	"Hoarfrost-Staff 7.2",
 	"Hoarfrost-Staff 8.0",
 	"Hoarfrost-Staff 8.1",
-	"Hoarfrost-Staff 8.2",
+	"Hoarfrost-Staff 8.2",*/
 };
 
 const set<string> Holy = {
@@ -212,7 +212,7 @@ const set<string> Holy = {
 	"Divine-Staff 8.1",
 	"Divine-Staff 8.2",
 
-	"Lifetouch-Staff 6.0",
+	/*"Lifetouch-Staff 6.0",
 	"Lifetouch-Staff 6.1",
 	"Lifetouch-Staff 6.2",
 	"Lifetouch-Staff 7.0",
@@ -220,7 +220,7 @@ const set<string> Holy = {
 	"Lifetouch-Staff 7.2",
 	"Lifetouch-Staff 8.0",
 	"Lifetouch-Staff 8.1",
-	"Lifetouch-Staff 8.2",
+	"Lifetouch-Staff 8.2",*/
 };
 
 const set<string> Nature = {
@@ -432,6 +432,94 @@ const set<string> Mace = {
 	"Bedrock-Mace 8.0",
 	"Bedrock-Mace 8.1",
 	"Bedrock-Mace 8.2",
+};
+
+const set<string> Sword = {
+	"Broadsword 6.0",
+	"Broadsword 6.1",
+	"Broadsword 6.2",
+	"Broadsword 7.0",
+	"Broadsword 7.1",
+	"Broadsword 7.2",
+	"Broadsword 8.0",
+	"Broadsword 8.1",
+	"Broadsword 8.2",
+
+	"Claymore 6.0",
+	"Claymore 6.1",
+	"Claymore 6.2",
+	"Claymore 7.0",
+	"Claymore 7.1",
+	"Claymore 7.2",
+	"Claymore 8.0",
+	"Claymore 8.1",
+	"Claymore 8.2",
+
+	"Dual-Swords 6.0",
+	"Dual-Swords 6.1",
+	"Dual-Swords 6.2",
+	"Dual-Swords 7.0",
+	"Dual-Swords 7.1",
+	"Dual-Swords 7.2",
+	"Dual-Swords 8.0",
+	"Dual-Swords 8.1",
+	"Dual-Swords 8.2",
+
+	"Clarent-Blade 6.0",
+	"Clarent-Blade 6.1",
+	"Clarent-Blade 6.2",
+	"Clarent-Blade 7.0",
+	"Clarent-Blade 7.1",
+	"Clarent-Blade 7.2",
+	"Clarent-Blade 8.0",
+	"Clarent-Blade 8.1",
+	"Clarent-Blade 8.2",
+
+};
+
+
+const set<string> OffHand = {
+
+	"Tome-of-Spells 6.0",
+	"Tome-of-Spells 6.1",
+	"Tome-of-Spells 6.2",
+	"Tome-of-Spells 7.0",
+	"Tome-of-Spells 7.1",
+	"Tome-of-Spells 7.2",
+	"Tome-of-Spells 8.0",
+	"Tome-of-Spells 8.1",
+	"Tome-of-Spells 8.2",
+
+	"Shield 6.0",
+	"Shield 6.1",
+	"Shield 6.2",
+	"Shield 7.0",
+	"Shield 7.1",
+	"Shield 7.2",
+	"Shield 8.0",
+	"Shield 8.1",
+	"Shield 8.2",
+
+	"Sarcophagus 6.0",
+	"Sarcophagus 6.1",
+	"Sarcophagus 6.2",
+	"Sarcophagus 7.0",
+	"Sarcophagus 7.1",
+	"Sarcophagus 7.2",
+	"Sarcophagus 8.0",
+	"Sarcophagus 8.1",
+	"Sarcophagus 8.2",
+
+	"Torch 6.0",
+	"Torch 6.1",
+	"Torch 6.2",
+	"Torch 7.0",
+	"Torch 7.1",
+	"Torch 7.2",
+	"Torch 8.0",
+	"Torch 8.1",
+	"Torch 8.2",
+
 };
 
 
@@ -883,16 +971,17 @@ const set <string> ListPlusTwo = {
 	"Scholar Robe",
 	"Scholar Cowl",
 	"Scholar Sandals",
+
 	"Soldier Helmet",
 	"Soldier Armor",
 	"Soldier Boots",
-	
 
-	
 	"Fire Staff",
-	
 
-	
+	"Tome of Spells",
+
+	"Bow",
+
 
 	"Bag",
 };
@@ -903,6 +992,10 @@ const set <string> ListPlusOne = {
 	"Dagger",
 	"Hammer",
 	"Mace",
+	"Spear",
+	"Torch",
+	"Crossbow",
+
 };
 
 const set <string> ListPlusThree = {
@@ -910,11 +1003,15 @@ const set <string> ListPlusThree = {
 	"Mercenary Hood",
 	"Mercenary Jacket",
 	"Mercenary Shoes",
+	"Broadsword",
+	"Shield",
+
 };
 
 const map <string, string> ItemTwoName = {
 	{"Great Fire Staff", "Vendetta's Wrath"},
 	{"Greataxe", "Hand Of Khor"},
+	{"Tome of Spells", "Rosalia's Diary"},
 };
 
 const set<string> ItemAndArtif = {
@@ -938,5 +1035,20 @@ const map <pair<int, int>, int> ListItemLimit = {
 	{{8, 1}, 3},
 	{{8, 2}, 1},
 };
+
+const map <pair<int, int>, int> ListItemLimitOrder = {
+	{{6, 0} , 5},
+	{{6, 1} , 2},
+	{{6, 2} , 1},
+
+	{{7, 0}, 3},
+	{{7, 1}, 2},
+	{{7, 2}, 1},
+
+	{{8, 0}, 2},
+	{{8, 1}, 1},
+	{{8, 2}, 0},
+};
+
 
 
