@@ -644,123 +644,130 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 	for (const auto& el : Items) {
 	
 		for (const auto& item : el) {
-			
+
 			_Item i = _ParseItem(item);
-			int BMprice = db.GetItemPriceDB(i);
-			
-			//Выбор имени
-			if (i.name != prev_name) {
+			string s_count = to_string(ListItemLimitOrder.at({ i.tier, i.enchant }));
 
-				// Нажатие, чтобы закрыть окно (если открыто)
-				SetCursorPos(937, 310);
-				MouseLeftClick();
+			if (s_count != "0") {
+				
+				int BMprice = db.GetItemPriceDB(i);
 
-				ClearItemName();
-				MoveToInsertName();
-				InsertItemName(i.name);
+				//Выбор имени
+				if (i.name != prev_name) {
 
-				// Кнопка продать
-				SetCursorPos(1280, 430);
-				MouseLeftClick();
-
-				prev_tier = -1;
-				prev_enchant = -1;
-			}
-			
-			// Выбор энчатнта
-			if (i.enchant != prev_enchant) {
-				MoveToEnchantC(i.enchant);
-			}
-			
-			// Выбор тира
-			if (i.tier != prev_tier) {
-				if (CheckList(ListPlusThree, i.name) && i.enchant == 0) {
-					MoveToTierC(i.tier + 3);
-				}
-				else if (CheckList(ListPlusTwo, i.name) && i.enchant == 0) {
-					MoveToTierC(i.tier + 2);
-				}
-				else if (CheckList(ListPlusOne, i.name) && i.enchant == 0) {
-					MoveToTierC(i.tier + 1);
-				}
-				else {
-					MoveToTierC(i.tier);
-				}
-			}
-
-			
-
-			prev_name = i.name;
-			prev_tier = i.tier;
-			prev_enchant = i.enchant;
-
-			SetCursorPos(561, 540);
-			MouseLeftClick();
-
-			int _price = ParseFromImg(ss, "output");
-
-
-			while (_price == prev_price && _price != -1) {
-				_price = ParseFromImg(ss, "output");
-				cout << "Error: price don't change\n";
-			}
-
-			// Если цена ордера не превышает 10% от цены на черном рынке, то ордер не ставится
-			if (_price > BMprice * (1 - 0.1)) {
-				continue;
-			}
-			else {
-
-
-				prev_price = _price;
-
-				// Выбираем количество 
-				SetCursorPos(575, 575);
-				MouseLeftClick();
-
-				string s_count = to_string(ListItemLimitOrder.at({ i.tier, i.enchant }));
-				for (const auto& el : s_count) {
-					KeyBrdBtnPress(el);
-				}
-
-
-				// Выбираем цену
-
-
-				if (_price < 0.65 * BMprice) {
-					_price = 0.65 * BMprice;
-
-					string s_price = to_string(_price);
-
-					// Нажатие на область ввода цены
-					SetCursorPos(632, 632);
+					// Нажатие, чтобы закрыть окно (если открыто)
+					SetCursorPos(937, 310);
 					MouseLeftClick();
 
-					for (const auto& el : s_price) {
+					ClearItemName();
+					MoveToInsertName();
+					InsertItemName(i.name);
+
+					// Кнопка продать
+					SetCursorPos(1280, 430);
+					MouseLeftClick();
+
+					prev_tier = -1;
+					prev_enchant = -1;
+				}
+
+				// Выбор энчатнта
+				if (i.enchant != prev_enchant) {
+					MoveToEnchantC(i.enchant);
+				}
+
+				// Выбор тира
+				if (i.tier != prev_tier) {
+					if (CheckList(ListPlusThree, i.name) && i.enchant == 0) {
+						MoveToTierC(i.tier + 3);
+					}
+					else if (CheckList(ListPlusTwo, i.name) && i.enchant == 0) {
+						MoveToTierC(i.tier + 2);
+					}
+					else if (CheckList(ListPlusOne, i.name) && i.enchant == 0) {
+						MoveToTierC(i.tier + 1);
+					}
+					else {
+						MoveToTierC(i.tier);
+					}
+				}
+
+
+
+				prev_name = i.name;
+				prev_tier = i.tier;
+				prev_enchant = i.enchant;
+
+				SetCursorPos(561, 540);
+				MouseLeftClick();
+
+				int _price = ParseFromImg(ss, "output");
+
+
+				while (_price == prev_price && _price != -1) {
+					_price = ParseFromImg(ss, "output");
+					cout << "Error: price don't change\n";
+				}
+
+				// Если цена ордера не превышает 10% от цены на черном рынке, то ордер не ставится
+				if (_price > BMprice * (1 - 0.1)) {
+					continue;
+				}
+				else {
+
+
+					prev_price = _price;
+
+					// Выбираем количество 
+					SetCursorPos(575, 575);
+					MouseLeftClick();
+
+
+
+					for (const auto& el : s_count) {
 						KeyBrdBtnPress(el);
 					}
 
-				}
-				else {
-					// Нажатие на +1 серебро для ордера
-					SetCursorPos(862, 635);
+
+					// Выбираем цену
+
+
+					if (_price < 0.65 * BMprice) {
+						_price = 0.65 * BMprice;
+
+						string s_price = to_string(_price);
+
+						// Нажатие на область ввода цены
+						SetCursorPos(632, 632);
+						MouseLeftClick();
+
+						for (const auto& el : s_price) {
+							KeyBrdBtnPress(el);
+						}
+
+					}
+					else {
+						// Нажатие на +1 серебро для ордера
+						SetCursorPos(862, 635);
+						MouseLeftClick();
+
+					}
+
+					MoveToBuy2();
+
+					// Подтверждение покупки
+					SetCursorPos(807, 550);
 					MouseLeftClick();
 
+					// Подтверждение если не можете носить итем
+					SetCursorPos(805, 575);
+					MouseLeftClick();
+
+					MoveToBuy();
+					prev_tier = -1;
+					prev_enchant = -1;
+
 				}
-
-				MoveToBuy2();
-
-				// Подтверждение покупки
-				SetCursorPos(807, 550);
-				MouseLeftClick();
-
-				// Подтверждение если не можете носить итем
-				SetCursorPos(805, 575);
-				MouseLeftClick();
-
-				MoveToBuy();
-				prev_tier = -1;
-				prev_enchant = -1;
 			}
 
 		}
