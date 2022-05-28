@@ -51,6 +51,7 @@ OpenCV - https://www.youtube.com/watch?v=Ny3GM1octbo
 * SatchelOfInsight: {SatchelOfInsight}
 
 
+Изменения
 
 * v. 0.3.0 
 1. Добавлены категории предметов: Sword, OffHand.
