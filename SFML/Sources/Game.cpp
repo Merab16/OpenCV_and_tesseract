@@ -3,6 +3,9 @@
 // mCategories support variables
 map<string, bool> mIsImageSelected;
 
+
+
+
 Game::Game()
 {
 	LOG_DURATION("Load took: ");
@@ -275,7 +278,6 @@ void Game::MenuConroller(const string& command) {
 	}
 	else if (command == "Calculate") {
 		current_wnd = command;
-
 	}
 	else if (command == "Sort") {
 		current_wnd = "EnterWndS";

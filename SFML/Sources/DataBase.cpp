@@ -106,7 +106,11 @@ void DataBase::_PrintPrice(int nothing) const {
 				prices.push_back(item.second.price);
 				cout << IndexToCity(item.first) << ":\t" << item.second.price << endl;
 			}
-			cout << "Profit: " << _it->first << '%' << endl;
+			cout << "Profit: " << _it->first<< '%' << endl;
+
+			// 
+			// _it->first = price(form BM) - price (from CITY) - 4.5%
+
 		}
 	}
 }

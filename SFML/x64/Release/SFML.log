@@ -1,8 +1,22 @@
-﻿  MarketAction.cpp
-D:\C++\Albion_openCV\SFML\SFML\Sources\MarketAction.cpp(736,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+﻿  Source.cpp
+  DataBase.cpp
+D:\C++\Albion_openCV\SFML\SFML\Sources\DataBase.cpp(34,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Game.cpp
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(244,52): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(244,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(773,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\Game.cpp(773,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating code
-  2 of 2317 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  6 of 2317 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    30 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SFML.vcxproj -> D:\C++\Albion_openCV\SFML\x64\Release\SFML.exe

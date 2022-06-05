@@ -30,8 +30,6 @@ private:
 	// Отсортированные данные из [db_min_price] по необходимой прибыли
 	map<int, map<_Item, map<int, _Info>>> _db_sorted;
 
-	
-
 public:
 
 				/// 1. Конструкторы и Деструкторы
