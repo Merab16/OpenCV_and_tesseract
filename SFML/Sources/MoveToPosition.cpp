@@ -1,4 +1,8 @@
 #include "../Headers/MoveToPosition.h"
+#include "../Headers/Config.h"
+
+MyConfig Config;
+
 
 // Coordinates of position all the tier items; 
 // Tier 1 = (X, Y);
@@ -95,72 +99,138 @@ void KeyBrdBtnPress(char lt) {
 
 // Move to Positiopns
 void MoveToInsertName() {
-	SetCursorPos(650, 270);
+	SetCursorPos(Config.ScreenScale.first * 650, Config.ScreenScale.second * 270);
 	MouseLeftClick();
 }
 
 void MoveToTier(int tier) {
-	SetCursorPos(950, 270);
+	SetCursorPos(Config.ScreenScale.first * 950, Config.ScreenScale.second * 270);
 	MouseLeftClick();
-	SetCursorPos(TierPosition[tier].first, TierPosition[tier].second);
+	SetCursorPos(Config.ScreenScale.first * TierPosition[tier].first, Config.ScreenScale.second * TierPosition[tier].second);
 	MouseLeftClick();
 }
 
 void MoveToTierC(int tier) {
-	SetCursorPos(520, 400);
+	SetCursorPos(Config.ScreenScale.first * 520, Config.ScreenScale.second * 400);
 	MouseLeftClick();
-	SetCursorPos(TierPositionC[tier].first, TierPositionC[tier].second);
+	SetCursorPos(Config.ScreenScale.first * TierPositionC[tier].first, Config.ScreenScale.second * TierPositionC[tier].second);
 	MouseLeftClick();
 }
 
 void MoveToEnchant(int enchant) {
-	SetCursorPos(1100, 270);
+	SetCursorPos(Config.ScreenScale.first * 1100, Config.ScreenScale.second * 270);
 	MouseLeftClick();
-	SetCursorPos(EnchantPosition[enchant].first, EnchantPosition[enchant].second);
+	SetCursorPos(Config.ScreenScale.first * EnchantPosition[enchant].first, Config.ScreenScale.second * EnchantPosition[enchant].second);
 	MouseLeftClick();
 }
 
 void MoveToEnchantC(int enchant) {
-	SetCursorPos(670, 400);
+	SetCursorPos(Config.ScreenScale.first * 670, Config.ScreenScale.second * 400);
 	MouseLeftClick();
-	SetCursorPos(EnchantPositionC[enchant].first, EnchantPositionC[enchant].second);
+	SetCursorPos(Config.ScreenScale.first * EnchantPositionC[enchant].first, Config.ScreenScale.second * EnchantPositionC[enchant].second);
 	MouseLeftClick();
 }
 
 void MoveToQuality(int qual) {
-	SetCursorPos(1230, 270);
+	SetCursorPos(Config.ScreenScale.first * 1230, Config.ScreenScale.second * 270);
 	MouseLeftClick();
-	SetCursorPos(QualityPosition[qual].first, QualityPosition[qual].second);
+	SetCursorPos(Config.ScreenScale.first * QualityPosition[qual].first, Config.ScreenScale.second * QualityPosition[qual].second);
 	MouseLeftClick();
 }
 
 void ClearItemName() {
-	SetCursorPos(722, 270);
+	SetCursorPos(Config.ScreenScale.first * 722, Config.ScreenScale.second * 270);
 	MouseLeftClick();
 }
 
 void MoveToBuy() {
-	SetCursorPos(1280, 430);
+	SetCursorPos(Config.ScreenScale.first * 1280, Config.ScreenScale.second * 430);
 	MouseLeftClick();
 }
 
 void MoveToBuy2() {
-	SetCursorPos(885, 735);
+	SetCursorPos(Config.ScreenScale.first * 885, Config.ScreenScale.second * 735);
 	MouseLeftClick();
 }
 
 void MoveToEdit() {
-	SetCursorPos(1230, 410);
+	SetCursorPos(Config.ScreenScale.first * 1230, Config.ScreenScale.second * 410);
 	MouseLeftClick();
 }
 
 void MoveToEditPrice() {
-	SetCursorPos(635, 635);
+	SetCursorPos(Config.ScreenScale.first * 635, Config.ScreenScale.second * 635);
 	MouseLeftClick();
 }
 
 void UpdateOrder() {
-	SetCursorPos(875, 735);
+	SetCursorPos(Config.ScreenScale.first * 875, Config.ScreenScale.second * 735);
+	MouseLeftClick();
+}
+
+void CloseGameWindow() {
+	// Нажатие, чтобы закрыть окно (если открыто)
+	SetCursorPos(Config.ScreenScale.first * 937, Config.ScreenScale.second * 310);
+	MouseLeftClick();
+}
+
+void SellBtn() {
+	// Кнопка продать
+	SetCursorPos(Config.ScreenScale.first * 1280, Config.ScreenScale.second * 430);
+	MouseLeftClick();
+}
+
+void ClickSellTab() {
+	SetCursorPos(Config.ScreenScale.first * 1385, Config.ScreenScale.second * 415);
+	MouseLeftClick();
+}
+
+void ClickBuyTab() {
+	SetCursorPos(Config.ScreenScale.first * 1385, Config.ScreenScale.second * 335);
+	MouseLeftClick();
+}
+
+void PriceMinusOneSilver() {
+	SetCursorPos(Config.ScreenScale.first * 563, Config.ScreenScale.second * 635);
+	MouseLeftClick();
+}
+
+void PricePlusOneSilver() {
+	// Нажатие на +1 серебро для ордера
+	SetCursorPos(862, 635);
+	MouseLeftClick();
+}
+
+void ChooseCountOrder() {
+	// Выбираем количество 
+	SetCursorPos(Config.ScreenScale.first * 575, Config.ScreenScale.second * 575);
+	MouseLeftClick();
+}
+
+void ConfirmBuy() {
+	// Подтверждение покупки
+	SetCursorPos(807, 550);
+	MouseLeftClick();
+}
+
+void ConfirmBuy2() {
+	// Подтверждение если не можете носить итем
+	SetCursorPos(805, 575);
+	MouseLeftClick();
+}
+
+void NoName1() {
+	SetCursorPos(Config.ScreenScale.first * 990, Config.ScreenScale.second * 375);
+	MouseLeftClick();
+}
+
+void NoName2() {
+	SetCursorPos(Config.ScreenScale.first * 1275, Config.ScreenScale.second * 430);
+	MouseLeftClick();
+}
+
+void NoName3() {
+	SetCursorPos(Config.ScreenScale.first * 561, Config.ScreenScale.second * 540);
 	MouseLeftClick();
 }
 

@@ -88,17 +88,13 @@ void _CheckPrice(DataBase& db, const set<set<string>>& Items,
 				//Выбор имени
 				if (i.name != prev_name) {
 
-					// Нажатие, чтобы закрыть окно (если открыто)
-					SetCursorPos(937, 310);
-					MouseLeftClick();
+					CloseGameWindow();
 
 					ClearItemName();
 					MoveToInsertName();
 					InsertItemName(i.name);
 
-					// Кнопка продать
-					SetCursorPos(1280, 430);
-					MouseLeftClick();
+					SellBtn();
 
 					prev_tier = -1;
 					prev_enchant = -1;
@@ -407,8 +403,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 						prev_enchant = -1;
 
 						if (current_pos != "sell") {
-							SetCursorPos(1385, 415);
-							MouseLeftClick();
+							ClickSellTab();
 							current_pos = "sell";
 						}
 
@@ -449,8 +444,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 								continue;
 							}
 							if (_price <= el.second.price * 1.02) {
-								SetCursorPos(990, 375);
-								MouseLeftClick();
+								NoName1();
 								MoveToBuy2();
 								ItemLimit[item.first]++;
 								item_bought[item.first][_price]++;
@@ -460,8 +454,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 								db._EditItemPrice(item.first, el.first, _price);
 								db._Calculate(Items, el.first);
 								db._Sort(profit);
-								SetCursorPos(940, 310);
-								MouseLeftClick();
+								CloseGameWindow();
 								break;
 							}
 						}
@@ -479,8 +472,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 						}
 
 						if (current_pos != "buy") {
-							SetCursorPos(1385, 335);
-							MouseLeftClick();
+							ClickBuyTab();
 							current_pos = "buy";
 						}
 
@@ -518,8 +510,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 							}
 
 							if (_price <= el.second.price * 1.02) {
-								SetCursorPos(1275, 430);
-								MouseLeftClick();
+								NoName2();
 								MoveToBuy2();
 								ItemLimit[item.first]++;
 								item_bought[item.first][_price]++;
@@ -544,7 +535,7 @@ void BuyItem(DataBase& db, const set<set<string>>& Items,
 
 }
 
-// Очень плохо сделана [заброшена]
+
 void SellItem(int count) {
 
 	/*string prev_name{};
@@ -613,16 +604,13 @@ void SellItem(int count) {
 
 	for (int i = 0; i < count; ++i) {
 
-		SetCursorPos(1275, 430);
-		MouseLeftClick();
+		NoName2();
 		Sleep(30);
 
-		SetCursorPos(563, 635);
-		MouseLeftClick();
+		PriceMinusOneSilver();
 		Sleep(50);
 
-		SetCursorPos(885, 735);
-		MouseLeftClick();
+		MoveToBuy2();
 		Sleep(50);
 
 	}
@@ -656,16 +644,14 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 				if (i.name != prev_name) {
 
 					// Нажатие, чтобы закрыть окно (если открыто)
-					SetCursorPos(937, 310);
-					MouseLeftClick();
+					CloseGameWindow();
 
 					ClearItemName();
 					MoveToInsertName();
 					InsertItemName(i.name);
 
 					// Кнопка продать
-					SetCursorPos(1280, 430);
-					MouseLeftClick();
+					SellBtn();
 
 					prev_tier = -1;
 					prev_enchant = -1;
@@ -698,8 +684,7 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 				prev_tier = i.tier;
 				prev_enchant = i.enchant;
 
-				SetCursorPos(561, 540);
-				MouseLeftClick();
+				NoName3();
 
 				int _price = ParseFromImg(ss, "output");
 
@@ -718,9 +703,7 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 
 					prev_price = _price;
 
-					// Выбираем количество 
-					SetCursorPos(575, 575);
-					MouseLeftClick();
+					ChooseCountOrder();
 
 
 
@@ -738,8 +721,7 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 						string s_price = to_string(_price);
 
 						// Нажатие на область ввода цены
-						SetCursorPos(632, 632);
-						MouseLeftClick();
+						MoveToEditPrice();
 
 						for (const auto& el : s_price) {
 							KeyBrdBtnPress(el);
@@ -747,21 +729,15 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 
 					}
 					else {
-						// Нажатие на +1 серебро для ордера
-						SetCursorPos(862, 635);
-						MouseLeftClick();
+						PricePlusOneSilver();
 
 					}
 
 					MoveToBuy2();
 
-					// Подтверждение покупки
-					SetCursorPos(807, 550);
-					MouseLeftClick();
+					ConfirmBuy();
 
-					// Подтверждение если не можете носить итем
-					SetCursorPos(805, 575);
-					MouseLeftClick();
+					ConfirmBuy2();
 
 					MoveToBuy();
 					prev_tier = -1;
@@ -774,8 +750,7 @@ void OrderItem(DataBase& db, const set<set<string>>& Items) {
 	}
 
 	// Нажатие на крестик
-	SetCursorPos(937, 310);
-	MouseLeftClick();
+	CloseGameWindow();
 
 }
 

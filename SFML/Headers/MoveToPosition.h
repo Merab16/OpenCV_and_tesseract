@@ -44,6 +44,31 @@ void MoveToEditPrice();
 
 void UpdateOrder();
 
+void CloseGameWindow();
+
+void SellBtn();
+
+void ClickSellTab();
+
+void ClickBuyTab();
+
+void PriceMinusOneSilver();
+
+void PricePlusOneSilver();
+
+void ChooseCountOrder();
+
+void ConfirmBuy();
+
+void ConfirmBuy2();
+
+void NoName1();
+
+void NoName2();
+
+void NoName3();
+
+
 // Other
 void InsertItemName(const string& itemName);
 
