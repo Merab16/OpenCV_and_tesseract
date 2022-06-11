@@ -60,7 +60,7 @@ map<int, pair<int, int>> QualityPosition = {
 // Mouse and Keyboard Events
 void MouseLeftClick() {
 	Sleep(120);
-	INPUT Inputs[1] = { 0 };
+	/*INPUT Inputs[1] = { 0 };
 
 	Inputs[0].type = INPUT_MOUSE;
 	Inputs[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
@@ -68,16 +68,19 @@ void MouseLeftClick() {
 	if (uSent != ARRAYSIZE(Inputs))
 	{
 		printf("SendInput failed: 0x%x\n", HRESULT_FROM_WIN32(GetLastError()));
-	}
+	}*/
 
+	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
 	Sleep(100);
-	Inputs[0].type = INPUT_MOUSE;
+	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+		
+	/*Inputs[0].type = INPUT_MOUSE;
 	Inputs[0].mi.dwFlags = MOUSEEVENTF_LEFTUP;
 	uSent = SendInput(ARRAYSIZE(Inputs), Inputs, sizeof(INPUT));
 	if (uSent != ARRAYSIZE(Inputs))
 	{
 		printf("SendInput failed: 0x%x\n", HRESULT_FROM_WIN32(GetLastError()));
-	}
+	}*/
 	Sleep(100);
 }
 

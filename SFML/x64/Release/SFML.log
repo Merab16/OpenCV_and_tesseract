@@ -8,13 +8,13 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
               _Other2=int
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
@@ -39,13 +39,13 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
               _Other2=int
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
@@ -82,13 +82,13 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
               _Other2=int
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
@@ -104,262 +104,262 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
               _Ty2=float
           ]
   MoveToPosition.cpp
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(102,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(105,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(102,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(105,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(107,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(110,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(107,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(110,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(109,94): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(112,94): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(109,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(112,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(114,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(117,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(114,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(117,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(116,95): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(119,95): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(116,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(119,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(121,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(124,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(121,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(124,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(123,100): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(126,100): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(123,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(126,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(128,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(131,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(128,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(131,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(130,101): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(133,101): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(130,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(133,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(135,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(138,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(135,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(138,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(137,97): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(140,97): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(137,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(140,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(142,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(145,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(142,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(145,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(147,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(150,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(147,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(150,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(152,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(155,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(152,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(155,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(157,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(160,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(157,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(160,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(162,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(165,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(162,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(165,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(167,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(170,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(167,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(170,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(173,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(176,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(173,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(176,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(179,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(182,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(179,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(182,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(184,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(187,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(184,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(187,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(189,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(192,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(189,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(192,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(194,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(197,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(194,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(197,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(206,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(209,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(206,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(209,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(223,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(226,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(223,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(226,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(228,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(231,74): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(228,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(231,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(233,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(236,73): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
           with
           [
               _Ty2=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(233,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
+D:\C++\Albion_openCV\SFML\SFML\Sources\MoveToPosition.cpp(236,40): warning C4244: 'argument': conversion from '_Ty1' to 'int', possible loss of data
           with
           [
               _Ty1=float
@@ -373,13 +373,13 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
           [
               _Ty1=float
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
               _Other2=int
           ]
-D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(40): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
+D:\C++\Albion_openCV\SFML\SFML\Headers\Config.h(43): message : see reference to function template instantiation 'std::pair<float,float>::pair<int,int,0>(_Other1 &&,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=int,
@@ -395,12 +395,8 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
               _Ty2=float
           ]
   Generating code
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-D:\C++\Albion_openCV\SFML\SFML\Sources\ScreenCapture.cpp(17): warning C4172: returning address of local variable or temporary: wtext
-D:\C++\Albion_openCV\SFML\SFML\Sources\DataBase.cpp(279): warning C4715: 'CityToIndex': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\MarketAction.cpp(303): warning C4715: 'CheckItemLimit': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\MyTime.cpp(127): warning C4715: 'MonthToIndex': not all control paths return a value
-D:\C++\Albion_openCV\SFML\SFML\Sources\DataBase.cpp(255): warning C4715: 'IndexToCity': not all control paths return a value
-  All 2335 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  370 of 2336 functions (15.8%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    29 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SFML.vcxproj -> D:\C++\Albion_openCV\SFML\x64\Release\SFML.exe

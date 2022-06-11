@@ -131,7 +131,7 @@ void Game::InitVersion() {
 	cout << "InitVersion\n";
 	version = new Text;
 	version->setFont(font);
-	version->setString("Version 0.3.0");
+	version->setString("Version 0.3.1");
 	version->setCharacterSize(12);
 	version->setPosition({ 5, 480 });
 }

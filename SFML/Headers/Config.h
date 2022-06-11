@@ -25,7 +25,8 @@ struct MyConfig {
 				string X(it + 2, it_c);
 				string Y(it_c + 2, str.end());
 				ScreenResolution = { stoi(X), stoi(Y) };
-				ScreenScale = { ScreenResolution.first / 1920, ScreenResolution.second / 1080 };
+				ScreenScale = { ScreenResolution.first / 1920.f,
+					ScreenResolution.second / 1080.f };
 			}
 
 			++i;
@@ -33,6 +34,8 @@ struct MyConfig {
 
 		fin.close();
 		cout << "Current Resolution: " << ScreenResolution.first << ' ' << ScreenResolution.second << '\n';
+		cout << "Current Scale: " << ScreenScale.first << ' ' << ScreenScale.second << '\n';
+
 
 	}
 
