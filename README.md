@@ -16,7 +16,7 @@ https://youtu.be/zakgIiXpaW0
 
 OpenCV - https://www.youtube.com/watch?v=Ny3GM1octbo
 
-Opencv 4.5.5 - https://docs.opencv.org/
+Opencv 4.5.5 - https://opencv.org/releases/
 
 Так же, после распаковки архива, измените путь к библиотеке SFML: https://youtu.be/54SkBSKNiP8
 
